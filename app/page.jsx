@@ -26,12 +26,12 @@ export default function Home() {
                         Discover our curated collection of premium diamonds and exquisite jewelry
                     </p>
                     <div className="flex gap-6 justify-center">
-                        <Link
-                            href="/products/natural-diamonds"
-                            className="px-8 py-3 bg-accent text-black font-semibold hover:bg-accent-dark transition"
-                        >
-                            Shop Now
-                        </Link>
+                        {/*<Link*/}
+                        {/*    href="/products/natural-diamonds"*/}
+                        {/*    className="px-8 py-3 bg-accent text-black font-semibold hover:bg-accent-dark transition"*/}
+                        {/*>*/}
+                        {/*    Shop Now*/}
+                        {/*</Link>*/}
                         <Link
                             href="/guide"
                             className="px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-black transition"

@@ -39,7 +39,7 @@ export default function DiamondJewelry() {
                                 </div>
                                 <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
                                 <p className="text-sm text-muted-foreground mb-3">Metal: {item.metal}</p>
-                                <p className="text-2xl font-bold text-accent">{item.price}</p>
+                                {/*<p className="text-2xl font-bold text-accent">{item.price}</p>*/}
                             </div>
                         ))}
                     </div>
