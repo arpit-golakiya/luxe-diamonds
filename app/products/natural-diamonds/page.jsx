@@ -1,10 +1,13 @@
+import Image from "next/image";
+
+
 export default function NaturalDiamonds() {
     const diamonds = [
-        { id: 1, name: "Classic Solitaire", carat: "2.15", price: "$15,450", color: "D" },
-        { id: 2, name: "Brilliant Cut", carat: "1.85", price: "$12,200", color: "E" },
-        { id: 3, name: "Emerald Glory", carat: "2.50", price: "$18,900", color: "F" },
-        { id: 4, name: "Royal Radiance", carat: "3.20", price: "$24,700", color: "D" },
-    ]
+        { id: 1, name: "Classic Solitaire", carat: "2.15", price: "$15,450", color: "D", image: "/natural_diamonds/classic_solitaire.png" },
+        { id: 2, name: "Brilliant Cut", carat: "1.85", price: "$12,200", color: "E", image: "/natural_diamonds/brilliant_cut.png" },
+        { id: 3, name: "Emerald Glory", carat: "2.50", price: "$18,900", color: "F", image: "/natural_diamonds/emerald_glory.png" },
+        { id: 4, name: "Royal Radiance", carat: "3.20", price: "$24,700", color: "D", image: "/natural_diamonds/royal_radiance.png" },
+    ];
 
     return (
         <div className="min-h-screen">
@@ -27,18 +30,19 @@ export default function NaturalDiamonds() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {diamonds.map((diamond) => (
-                                <div key={diamond.id} className="bg-surface rounded-lg overflow-hidden hover:shadow-lg transition">
-                                    <div className="h-64 bg-gradient-to-br from-gray-200 to-gray-300"></div>
+                                <div key={diamond.id}
+                                     className="bg-surface rounded-lg overflow-hidden hover:shadow-lg transition">
+                                    <div className="relative h-64 rounded-lg overflow-hidden">
+                                        <Image src={diamond.image} alt="Carat Weight" fill className="object-cover"
+                                               priority/>
+                                    </div>
                                     <div className="p-6">
                                         <h3 className="text-lg font-semibold mb-2">{diamond.name}</h3>
                                         <div className="text-sm text-muted-foreground mb-3 space-y-1">
                                             <p>Carat: {diamond.carat}</p>
                                             <p>Color: {diamond.color}</p>
                                         </div>
-                                        {/*<p className="text-2xl font-bold text-accent mb-4">{diamond.price}</p>*/}
-                                        {/*<button className="w-full py-2 bg-accent text-black font-semibold hover:bg-accent-dark transition">*/}
-                                        {/*    View Details*/}
-                                        {/*</button>*/}
+                                        {/* <p className="text-2xl font-bold text-accent mb-4">{diamond.price}</p> */}
                                     </div>
                                 </div>
                             ))}

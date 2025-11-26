@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export default function LabGrown() {
     const diamonds = [
-        { id: 1, name: "Ethical Elegance", carat: "2.00", price: "$8,450", color: "D" },
-        { id: 2, name: "Sustainable Shine", carat: "1.75", price: "$6,800", color: "E" },
-        { id: 3, name: "Modern Marvel", carat: "2.40", price: "$10,200", color: "F" },
-        { id: 4, name: "Future Brilliant", carat: "3.10", price: "$13,900", color: "D" },
+        { id: 1, name: "Ethical Elegance", carat: "2.00", price: "$8,450", color: "D", image: "/natural_diamonds/classic_solitaire.png" },
+        { id: 2, name: "Sustainable Shine", carat: "1.75", price: "$6,800", color: "E", image: "/natural_diamonds/brilliant_cut.png" },
+        { id: 3, name: "Modern Marvel", carat: "2.40", price: "$10,200", color: "F", image: "/natural_diamonds/emerald_glory.png" },
+        { id: 4, name: "Future Brilliant", carat: "3.10", price: "$13,900", color: "D", image: "/natural_diamonds/royal_radiance.png" },
     ]
 
     return (
@@ -26,8 +28,12 @@ export default function LabGrown() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                         {diamonds.map((diamond) => (
-                            <div key={diamond.id} className="bg-surface rounded-lg overflow-hidden hover:shadow-lg transition">
-                                <div className="h-64 bg-gradient-to-br from-cyan-200 to-blue-300"></div>
+                            <div key={diamond.id}
+                                 className="bg-surface rounded-lg overflow-hidden hover:shadow-lg transition">
+                                <div className="relative h-64 rounded-lg overflow-hidden">
+                                    <Image src={diamond.image} alt="Carat Weight" fill className="object-cover"
+                                           priority/>
+                                </div>
                                 <div className="p-6">
                                     <h3 className="text-lg font-semibold mb-2">{diamond.name}</h3>
                                     <div className="text-sm text-muted-foreground mb-3 space-y-1">
@@ -35,7 +41,8 @@ export default function LabGrown() {
                                         <p>Color: {diamond.color}</p>
                                     </div>
                                     <p className="text-2xl font-bold text-accent mb-4">{diamond.price}</p>
-                                    <button className="w-full py-2 bg-accent text-black font-semibold hover:bg-accent-dark transition">
+                                    <button
+                                        className="w-full py-2 bg-accent text-black font-semibold hover:bg-accent-dark transition">
                                         View Details
                                     </button>
                                 </div>
