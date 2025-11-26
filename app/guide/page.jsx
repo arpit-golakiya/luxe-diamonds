@@ -1,3 +1,6 @@
+import Image from "next/image";
+
+
 export default function Guide() {
     return (
         <div className="min-h-screen">
@@ -18,13 +21,18 @@ export default function Guide() {
                     <div className="space-y-16">
                         {/* Carat */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                            <div className="h-72 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg"></div>
+                            <div className="relative h-72 rounded-lg overflow-hidden">
+                                <Image src="/carat_wight.png" alt="Carat Weight" fill className="object-cover"
+                                       priority/>
+                            </div>
                             <div>
                                 <div className="text-4xl font-bold text-accent mb-2">C</div>
                                 <h2 className="text-4xl font-serif font-bold mb-4">Carat Weight</h2>
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    Carat weight measures the mass of a diamond. One carat equals 200 milligrams. While heavier diamonds
-                                    are rarer and generally more valuable, two diamonds of equal carat weight can have significantly
+                                    Carat weight measures the mass of a diamond. One carat equals 200 milligrams. While
+                                    heavier diamonds
+                                    are rarer and generally more valuable, two diamonds of equal carat weight can have
+                                    significantly
                                     different values based on their cut, color, and clarity.
                                 </p>
                                 <ul className="space-y-2 text-muted-foreground">
@@ -41,8 +49,10 @@ export default function Guide() {
                                 <div className="text-4xl font-bold text-accent mb-2">C</div>
                                 <h2 className="text-4xl font-serif font-bold mb-4">Cut</h2>
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    Cut refers to how well a diamond's facets interact with light. It's often considered the most
-                                    important of the 4Cs because it directly affects the diamond's brilliance and sparkle. A well-cut
+                                    Cut refers to how well a diamond's facets interact with light. It's often considered
+                                    the most
+                                    important of the 4Cs because it directly affects the diamond's brilliance and
+                                    sparkle. A well-cut
                                     diamond will reflect light beautifully.
                                 </p>
                                 <ul className="space-y-2 text-muted-foreground">
@@ -51,18 +61,24 @@ export default function Guide() {
                                     <li>• Most impactful on visual beauty</li>
                                 </ul>
                             </div>
-                            <div className="h-72 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-lg"></div>
+                            <div className="relative h-72 rounded-lg overflow-hidden">
+                                <Image src="/cut_image.png" alt="Diamond Cut" fill className="object-cover" priority/>
+                            </div>
                         </div>
 
                         {/* Color */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                            <div className="h-72 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-lg"></div>
+                            <div className="relative h-72 rounded-lg overflow-hidden">
+                                <Image src="/color.png" alt="Diamond Color" fill className="object-cover" priority/>
+                            </div>
                             <div>
                                 <div className="text-4xl font-bold text-accent mb-2">C</div>
                                 <h2 className="text-4xl font-serif font-bold mb-4">Color</h2>
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    Color in diamonds is graded on a scale from D (colorless) to Z (light color). Colorless diamonds are
-                                    the most valuable. Most diamonds on the D-Z scale appear colorless to the naked eye, with the
+                                    Color in diamonds is graded on a scale from D (colorless) to Z (light color).
+                                    Colorless diamonds are
+                                    the most valuable. Most diamonds on the D-Z scale appear colorless to the naked eye,
+                                    with the
                                     differences visible only under magnification.
                                 </p>
                                 <ul className="space-y-2 text-muted-foreground">
@@ -79,8 +95,10 @@ export default function Guide() {
                                 <div className="text-4xl font-bold text-accent mb-2">C</div>
                                 <h2 className="text-4xl font-serif font-bold mb-4">Clarity</h2>
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    Clarity refers to the absence of inclusions and blemishes in a diamond. It's graded on a scale from
-                                    Flawless to Included. Most diamonds contain some internal or external characteristics that don't
+                                    Clarity refers to the absence of inclusions and blemishes in a diamond. It's graded
+                                    on a scale from
+                                    Flawless to Included. Most diamonds contain some internal or external
+                                    characteristics that don't
                                     affect their beauty to the naked eye.
                                 </p>
                                 <ul className="space-y-2 text-muted-foreground">
@@ -89,7 +107,9 @@ export default function Guide() {
                                     <li>• Significantly impacts price</li>
                                 </ul>
                             </div>
-                            <div className="h-72 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg"></div>
+                            <div className="relative h-72 rounded-lg overflow-hidden">
+                                <Image src="/clarity.png" alt="Diamond Clarity" fill className="object-cover" priority/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,10 +150,12 @@ export default function Guide() {
                         Use your knowledge of the 4Cs to explore our collection and find the perfect stone.
                     </p>
                     <div className="flex gap-6 justify-center flex-wrap">
-                        <button className="px-8 py-3 bg-accent text-black font-semibold hover:bg-accent-dark transition">
+                        <button
+                            className="px-8 py-3 bg-accent text-black font-semibold hover:bg-accent-dark transition">
                             Shop Diamonds
                         </button>
-                        <button className="px-8 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-black transition">
+                        <button
+                            className="px-8 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-black transition">
                             Schedule Consultation
                         </button>
                     </div>

@@ -35,10 +35,10 @@ export default function NaturalDiamonds() {
                                             <p>Carat: {diamond.carat}</p>
                                             <p>Color: {diamond.color}</p>
                                         </div>
-                                        <p className="text-2xl font-bold text-accent mb-4">{diamond.price}</p>
-                                        <button className="w-full py-2 bg-accent text-black font-semibold hover:bg-accent-dark transition">
-                                            View Details
-                                        </button>
+                                        {/*<p className="text-2xl font-bold text-accent mb-4">{diamond.price}</p>*/}
+                                        {/*<button className="w-full py-2 bg-accent text-black font-semibold hover:bg-accent-dark transition">*/}
+                                        {/*    View Details*/}
+                                        {/*</button>*/}
                                     </div>
                                 </div>
                             ))}
