@@ -1,11 +1,13 @@
+import Image from "next/image";
+
 export default function DiamondJewelry() {
     const jewelry = [
-        { id: 1, name: "Solitaire Engagement Ring", metal: "Platinum", price: "$6,500" },
-        { id: 2, name: "Diamond Stud Earrings", metal: "14K White Gold", price: "$3,200" },
-        { id: 3, name: "Tennis Bracelet", metal: "18K White Gold", price: "$8,900" },
-        { id: 4, name: "Diamond Pendant Necklace", metal: "Platinum", price: "$4,800" },
-        { id: 5, name: "Three-Stone Ring", metal: "14K Yellow Gold", price: "$7,200" },
-        { id: 6, name: "Diamond Halo Ring", metal: "18K White Gold", price: "$5,600" },
+        { id: 1, name: "Solitaire Engagement Ring", metal: "Platinum", price: "$6,500", image: "/jewelry/solitaire_engagement_ring.png" },
+        { id: 2, name: "Diamond Stud Earrings", metal: "14K White Gold", price: "$3,200", image: "/jewelry/diamond_stud_earrings.png" },
+        { id: 3, name: "Tennis Bracelet", metal: "18K White Gold", price: "$8,900", image: "/jewelry/tennis_bracelet.png" },
+        { id: 4, name: "Diamond Pendant Necklace", metal: "Platinum", price: "$4,800", image: "/jewelry/diamond_pendant_necklace.png" },
+        { id: 5, name: "Three-Stone Ring", metal: "14K Yellow Gold", price: "$7,200", image: "/jewelry/three_stone_ring.png" },
+        { id: 6, name: "Diamond Halo Ring", metal: "18K White Gold", price: "$5,600", image: "/jewelry/diamond_halo_ring.png" },
     ]
 
     return (
@@ -29,7 +31,12 @@ export default function DiamondJewelry() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {jewelry.map((item) => (
                             <div key={item.id} className="group">
-                                <div className="h-80 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-lg mb-4 overflow-hidden group-hover:shadow-lg transition"></div>
+                                {/*<div*/}
+                                {/*    className="h-80 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-lg mb-4 overflow-hidden group-hover:shadow-lg transition"></div>*/}
+                                <div className="relative h-64 rounded-lg overflow-hidden">
+                                    <Image src={item.image} alt="Carat Weight" fill className="object-cover"
+                                           priority/>
+                                </div>
                                 <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
                                 <p className="text-sm text-muted-foreground mb-3">Metal: {item.metal}</p>
                                 <p className="text-2xl font-bold text-accent">{item.price}</p>
