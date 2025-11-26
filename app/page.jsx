@@ -166,18 +166,53 @@ export default function Home() {
 
             {/* Call to Action */}
             <section className="py-20 bg-background">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Ready to Find Your Perfect
-                        Diamond?</h2>
-                    <p className="text-lg text-muted-foreground mb-10">
-                        Let our experts help you discover a diamond as unique as your love story.
-                    </p>
-                    <Link
-                        href="/contact"
-                        className="inline-block px-10 py-4 bg-accent text-black font-semibold text-lg hover:bg-accent-dark transition"
-                    >
-                        Get in Touch
-                    </Link>
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Ready to Find Your Perfect
+                            Diamond?</h2>
+                        <p className="text-lg text-muted-foreground">
+                            Let our experts help you discover a diamond as unique as your love story.
+                        </p>
+                    </div>
+
+                    {/* Contact Info Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                        {/* Phone Card */}
+                        <a
+                            href="tel:+918487818980"
+                            className="group bg-white border-2 border-gray-100 rounded-lg p-8 text-center hover:border-accent hover:shadow-lg transition duration-300"
+                        >
+                            <div className="text-accent text-5xl mb-4 group-hover:scale-110 transition duration-300">☎
+                            </div>
+                            <p className="text-gray-600 text-sm mb-2">Call us</p>
+                            <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition">
+                                +91 84878 18980
+                            </h3>
+                        </a>
+
+                        {/* Email Card */}
+                        <a
+                            href="mailto:info@luxediamonds.com"
+                            className="group bg-white border-2 border-gray-100 rounded-lg p-8 text-center hover:border-accent hover:shadow-lg transition duration-300"
+                        >
+                            <div className="text-accent text-5xl mb-4 group-hover:scale-110 transition duration-300">✉
+                            </div>
+                            <p className="text-gray-600 text-sm mb-2">Email us</p>
+                            <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition break-all">
+                                info@luxediamonds.com
+                            </h3>
+                        </a>
+                    </div>
+
+                    {/* Get in Touch Button */}
+                    <div className="text-center">
+                        <Link
+                            href="/contact"
+                            className="inline-block px-10 py-4 bg-accent text-black font-semibold text-lg hover:bg-accent-dark transition"
+                        >
+                            Get in Touch
+                        </Link>
+                    </div>
                 </div>
             </section>
         </>
