@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
     return (
         <div className="min-h-screen">
@@ -19,21 +21,29 @@ export default function About() {
                         <div>
                             <h2 className="text-3xl font-serif font-bold mb-6">Our Story</h2>
                             <p className="text-lg text-muted-foreground mb-4">
-                                LUXE Diamonds was founded with a single mission: to make premium diamonds accessible without
-                                compromising on quality or ethics. We believe that every person deserves to own a piece of timeless
+                                LUXE Diamonds was founded with a single mission: to make premium diamonds accessible
+                                without
+                                compromising on quality or ethics. We believe that every person deserves to own a piece
+                                of timeless
                                 beauty.
                             </p>
                             <p className="text-lg text-muted-foreground mb-4">
-                                Our journey began with a passion for gemstones and a commitment to transparency. Today, we work directly
-                                with certified suppliers and master craftspeople to bring you diamonds and jewelry that exceed
+                                Our journey began with a passion for gemstones and a commitment to transparency. Today,
+                                we work directly
+                                with certified suppliers and master craftspeople to bring you diamonds and jewelry that
+                                exceed
                                 expectations.
                             </p>
                             <p className="text-lg text-muted-foreground">
-                                From natural diamonds to lab-grown alternatives, we offer choices that align with your values and
+                                From natural diamonds to lab-grown alternatives, we offer choices that align with your
+                                values and
                                 preferences.
                             </p>
                         </div>
-                        <div className="bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg h-96"></div>
+                        <div className="relative h-120 rounded-lg overflow-hidden">
+                            <Image src="/about_us.png" alt="Carat Weight" fill className="object-cover"
+                                   priority/>
+                        </div>
                     </div>
                 </div>
             </section>

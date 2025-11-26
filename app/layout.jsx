@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
                         </Link>
                         <div className="group relative">
                             <button className="text-sm hover:text-accent transition">Products</button>
-                            <div className="absolute left-0 mt-0 w-48 bg-surface shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <div className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                                 <Link href="/products/natural-diamonds" className="block px-4 py-2 hover:bg-accent/10">
                                     Natural Diamonds
                                 </Link>
