@@ -34,7 +34,8 @@ export default function Contact() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">Contact Us</h1>
                     <p className="text-xl text-muted-foreground max-w-3xl">
-                        Have questions about our diamonds or jewelry? Our expert team is here to help you find exactly what you're
+                        Have questions about our diamonds or jewelry? Our expert team is here to help you find exactly
+                        what you're
                         looking for.
                     </p>
                 </div>
@@ -53,9 +54,9 @@ export default function Contact() {
                                     <h3 className="font-semibold mb-2">Address</h3>
                                     <p className="text-muted-foreground">
                                         123 Diamond Plaza
-                                        <br />
+                                        <br/>
                                         New York, NY 10001
-                                        <br />
+                                        <br/>
                                         United States
                                     </p>
                                 </div>
@@ -82,9 +83,9 @@ export default function Contact() {
                                     <h3 className="font-semibold mb-2">Hours</h3>
                                     <p className="text-muted-foreground">
                                         Monday - Friday: 10am - 6pm
-                                        <br />
+                                        <br/>
                                         Saturday: 11am - 5pm
-                                        <br />
+                                        <br/>
                                         Sunday: By Appointment
                                     </p>
                                 </div>
@@ -173,10 +174,16 @@ export default function Contact() {
 
             {/* Map Placeholder */}
             <section className="h-96 bg-surface">
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300">
-                    <p className="text-gray-500">Map Integration Placeholder</p>
-                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.8381784405483!2d72.88539547578958!3d21.23826458054884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f30e39d8b35%3A0xaaff5b6c047a2b53!2sTopcodx%20Infotech!5e0!3m2!1sen!2sin!4v1764166624224!5m2!1sen!2sin"
+                    className="w-full h-full"
+                    style={{border: 0}}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
             </section>
+
         </div>
     )
 }
