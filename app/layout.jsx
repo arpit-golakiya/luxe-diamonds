@@ -33,14 +33,14 @@ export default function RootLayout({ children }) {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-8">
-                        <Link href="/" className="text-sm hover:text-accent transition">
+                        <Link href="/" className="text-md hover:text-accent transition">
                             Home
                         </Link>
-                        <Link href="/about" className="text-sm hover:text-accent transition">
+                        <Link href="/about" className="text-md hover:text-accent transition">
                             About
                         </Link>
                         <div className="group relative">
-                            <button className="text-sm hover:text-accent transition">Products</button>
+                            <button className="text-md hover:text-accent transition">Products</button>
                             <div className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                                 <Link href="/products/natural-diamonds" className="block px-4 py-2 hover:bg-accent/10">
                                     Natural Diamonds
@@ -53,10 +53,10 @@ export default function RootLayout({ children }) {
                                 </Link>
                             </div>
                         </div>
-                        <Link href="/guide" className="text-sm hover:text-accent transition">
+                        <Link href="/guide" className="text-md hover:text-accent transition">
                             4C Guide
                         </Link>
-                        <Link href="/contact" className="text-sm hover:text-accent transition">
+                        <Link href="/contact" className="text-md hover:text-accent transition">
                             Contact
                         </Link>
                     </div>
