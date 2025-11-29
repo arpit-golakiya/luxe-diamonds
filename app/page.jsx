@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import TypingText from "@/components/TypingText";
 
 export default function Home() {
     const whyChooseRef = useRef(null)
@@ -72,7 +73,7 @@ export default function Home() {
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 {/* Video Background */}
                 <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-                    <source src="/hero_page_video.mp4" type="video/mp4"/>
+                    <source src="/home-page-video.mp4" type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
 
@@ -86,22 +87,19 @@ export default function Home() {
                     animate="visible"
                     variants={{visible: {transition: {staggerChildren: 0.2}}}}
                 >
-                    <motion.h1
-                        className="text-6xl md:text-7xl font-serif font-bold mb-6 text-balance"
-                        variants={heroTitleVariants}
-                    >
-                        Timeless Elegance
-                    </motion.h1>
+                    <motion.div variants={heroTextVariants}>
+                        <TypingText/>
+                    </motion.div>
                     <motion.p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto"
                               variants={heroTextVariants}>
                         Discover our curated collection of premium diamonds and exquisite jewelry
                     </motion.p>
                     <motion.div className="flex gap-6 justify-center" variants={heroButtonVariants} whileHover="hover">
                         <Link
-                            href="/guide"
+                            href="/contact"
                             className="px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-black transition"
                         >
-                            Learn 4Cs
+                            Contact us
                         </Link>
                     </motion.div>
                 </motion.div>
@@ -112,10 +110,10 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         className="text-center mb-12"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
+                        initial={{opacity: 0, y: 20}}
+                        whileInView={{opacity: 1, y: 0}}
+                        transition={{duration: 0.6}}
+                        viewport={{once: true}}
                     >
                         <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3">
                             Trusted by Discerning Customers Worldwide
