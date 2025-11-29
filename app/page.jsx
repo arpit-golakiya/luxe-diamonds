@@ -148,51 +148,51 @@ export default function Home() {
                         ))}
                     </div>
 
-                    {/* Customer Reviews */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[
-                            {
-                                name: "Sarah M.",
-                                location: "New York, USA",
-                                text: "Exceptional quality and service. The attention to detail is remarkable.",
-                                rating: 5,
-                            },
-                            {
-                                name: "James K.",
-                                location: "California, USA",
-                                text: "Authentic diamonds with proper certifications. Highly recommended!",
-                                rating: 5,
-                            },
-                            {
-                                name: "Emma R.",
-                                location: "Texas, USA",
-                                text: "Best experience with a jewelry merchant. Professional and trustworthy.",
-                                rating: 5,
-                            },
-                        ].map((review, i) => (
-                            <motion.div
-                                key={i}
-                                className="bg-white p-6 rounded-lg border border-gray-200"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: i * 0.1 }}
-                                viewport={{ once: true }}
-                            >
-                                <div className="mb-3 flex gap-1">
-                                    {Array(review.rating)
-                                        .fill(0)
-                                        .map((_, j) => (
-                                            <span key={j} className="text-accent">
-                        ★
-                      </span>
-                                        ))}
-                                </div>
-                                <p className="text-muted-foreground mb-4 italic">"{review.text}"</p>
-                                <p className="font-semibold text-sm">{review.name}</p>
-                                <p className="text-xs text-muted-foreground">{review.location}</p>
-                            </motion.div>
-                        ))}
-                    </div>
+                    {/*/!* Customer Reviews *!/*/}
+                    {/*<div className="grid grid-cols-1 md:grid-cols-3 gap-6">*/}
+                    {/*    {[*/}
+                    {/*        {*/}
+                    {/*            name: "Sarah M.",*/}
+                    {/*            location: "New York, USA",*/}
+                    {/*            text: "Exceptional quality and service. The attention to detail is remarkable.",*/}
+                    {/*            rating: 5,*/}
+                    {/*        },*/}
+                    {/*        {*/}
+                    {/*            name: "James K.",*/}
+                    {/*            location: "California, USA",*/}
+                    {/*            text: "Authentic diamonds with proper certifications. Highly recommended!",*/}
+                    {/*            rating: 5,*/}
+                    {/*        },*/}
+                    {/*        {*/}
+                    {/*            name: "Emma R.",*/}
+                    {/*            location: "Texas, USA",*/}
+                    {/*            text: "Best experience with a jewelry merchant. Professional and trustworthy.",*/}
+                    {/*            rating: 5,*/}
+                    {/*        },*/}
+                    {/*    ].map((review, i) => (*/}
+                    {/*        <motion.div*/}
+                    {/*            key={i}*/}
+                    {/*            className="bg-white p-6 rounded-lg border border-gray-200"*/}
+                    {/*            initial={{ opacity: 0, y: 20 }}*/}
+                    {/*            whileInView={{ opacity: 1, y: 0 }}*/}
+                    {/*            transition={{ duration: 0.6, delay: i * 0.1 }}*/}
+                    {/*            viewport={{ once: true }}*/}
+                    {/*        >*/}
+                    {/*            <div className="mb-3 flex gap-1">*/}
+                    {/*                {Array(review.rating)*/}
+                    {/*                    .fill(0)*/}
+                    {/*                    .map((_, j) => (*/}
+                    {/*                        <span key={j} className="text-accent">*/}
+                    {/*    ★*/}
+                    {/*  </span>*/}
+                    {/*                    ))}*/}
+                    {/*            </div>*/}
+                    {/*            <p className="text-muted-foreground mb-4 italic">"{review.text}"</p>*/}
+                    {/*            <p className="font-semibold text-sm">{review.name}</p>*/}
+                    {/*            <p className="text-xs text-muted-foreground">{review.location}</p>*/}
+                    {/*        </motion.div>*/}
+                    {/*    ))}*/}
+                    {/*</div>*/}
                 </div>
             </section>
 
