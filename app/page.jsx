@@ -415,7 +415,7 @@ export default function Home() {
                     >
                         <Link
                             href="/contact"
-                            className="inline-block px-10 py-4 bg-accent text-black font-semibold text-lg hover:bg-accent-dark transition"
+                            className="inline-block px-10 py-4 bg-accent text-white font-semibold text-lg hover:bg-accent-dark transition rounded-sm"
                         >
                             Get in Touch
                         </Link>

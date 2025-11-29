@@ -169,7 +169,7 @@ export default function DiamondJewelry() {
                         vision.
                     </motion.p>
                     <motion.button
-                        className="px-10 py-4 bg-accent text-black font-semibold hover:bg-accent-dark transition"
+                        className="px-10 py-4 bg-accent text-white font-semibold hover:bg-accent-dark transition"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >

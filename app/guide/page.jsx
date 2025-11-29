@@ -259,14 +259,14 @@ export default function Guide() {
                         viewport={{ once: true }}
                     >
                         <motion.button
-                            className="px-8 py-3 bg-accent text-black font-semibold hover:bg-accent-dark transition"
+                            className="px-8 py-3 bg-accent text-white font-semibold hover:bg-accent-dark transition"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             Shop Diamonds
                         </motion.button>
                         <motion.button
-                            className="px-8 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-black transition"
+                            className="px-8 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-white transition"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >

@@ -59,6 +59,9 @@ export default function RootLayout({ children }) {
                         <Link href="/contact" className="text-md hover:text-accent transition">
                             Contact
                         </Link>
+                        <Link href="/careers" className="text-md hover:text-accent transition">
+                            Career
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -93,6 +96,9 @@ export default function RootLayout({ children }) {
                         </Link>
                         <Link href="/contact" className="block py-2 text-sm">
                             Contact
+                        </Link>
+                        <Link href="/careers" className="block py-2 text-sm">
+                            Career
                         </Link>
                     </div>
                 )}
