@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import "./globals.css"
+import WhatsappWidget from "../components/WhatsappWidget";
 
 export default function RootLayout({ children }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -179,6 +180,8 @@ export default function RootLayout({ children }) {
                 </div>
             </div>
         </footer>
+        <WhatsappWidget />
+
         </body>
         </html>
     )
