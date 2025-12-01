@@ -28,7 +28,7 @@ export default function Contact() {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbywjUQkmtSO6DeRgIz9AxPd4zn2pimv6XpCoVlu7FC-v-5eOcN3yKp4ZWAfoReuK7959g/exec\n", {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbywjUQkmtSO6DeRgIz9AxPd4zn2pimv6XpCoVlu7FC-v-5eOcN3yKp4ZWAfoReuK7959g/exec", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
