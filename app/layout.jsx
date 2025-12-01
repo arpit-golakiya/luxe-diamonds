@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import "./globals.css"
 import WhatsappWidget from "../components/WhatsappWidget";
+import { Facebook, Instagram, Linkedin } from "lucide-react"
 
 export default function RootLayout({ children }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -42,7 +43,8 @@ export default function RootLayout({ children }) {
                         </Link>
                         <div className="group relative">
                             <button className="text-md hover:text-accent transition">Products</button>
-                            <div className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <div
+                                className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                                 <Link href="/products/natural-diamonds" className="block px-4 py-2 hover:bg-accent/10">
                                     Natural Diamonds
                                 </Link>
@@ -175,12 +177,46 @@ export default function RootLayout({ children }) {
                         </ul>
                     </div>
                 </div>
+
+                <div className="border-t border-border pt-8 mb-8">
+                    <h4 className="font-semibold mb-4">Follow Us</h4>
+                    <div className="flex gap-6">
+                        <a
+                            href="https://instagram.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-accent transition-colors"
+                            aria-label="Follow us on Instagram"
+                        >
+                            <Instagram size={24}/>
+                        </a>
+                        <a
+                            href="https://facebook.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-accent transition-colors"
+                            aria-label="Follow us on Facebook"
+                        >
+                            <Facebook size={24}/>
+                        </a>
+                        <a
+                            href="https://linkedin.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-accent transition-colors"
+                            aria-label="Follow us on LinkedIn"
+                        >
+                            <Linkedin size={24}/>
+                        </a>
+                    </div>
+                </div>
+
                 <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
                     <p>&copy; 2025 LUXE Diamonds. All rights reserved.</p>
                 </div>
             </div>
         </footer>
-        <WhatsappWidget />
+        <WhatsappWidget/>
 
         </body>
         </html>
