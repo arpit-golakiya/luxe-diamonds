@@ -125,3 +125,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add in globals.css or Contact.module.css */
+.custom-phone-input .react-international-phone-input {
+  @apply w-full px-4 py-2 border border-border rounded-lg;
+}
+
+.custom-phone-input .react-international-phone-country-selector-button {
+  @apply border-border;
+}

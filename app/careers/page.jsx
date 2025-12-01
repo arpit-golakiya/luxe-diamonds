@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import {PhoneInput} from "react-international-phone";
 
 export default function Careers() {
     const [formData, setFormData] = useState({
@@ -219,13 +220,13 @@ export default function Careers() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-sm font-semibold mb-2">Phone</label>
-                                <input
-                                    type="tel"
-                                    name="phone"
+                                <PhoneInput
+                                    defaultCountry="us"
                                     value={formData.phone}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent bg-background"
-                                    placeholder="+1 (555) 123-4567"
+                                    onChange={(value) =>
+                                        setFormData((prev) => ({...prev, phone: value}))
+                                    }
+                                    className="custom-phone-input w-full"
                                 />
                             </div>
                             <div>

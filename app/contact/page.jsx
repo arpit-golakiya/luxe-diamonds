@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import { PhoneInput } from "react-international-phone"
+import "react-international-phone/style.css"
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -9,6 +11,8 @@ export default function Contact() {
         phone: "",
         subject: "",
         message: "",
+        diamondType: "",
+        country: "",
     })
 
     const handleChange = (e) => {
@@ -19,24 +23,54 @@ export default function Contact() {
         }))
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // Handle form submission here
-        console.log("Form submitted:", formData)
-        alert("Thank you for reaching out! We will contact you soon.")
-        setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-    }
+    // For Web3Forms
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const formDataToSend = new FormData();
+        formDataToSend.append("name", formData.name);
+        formDataToSend.append("email", formData.email);
+        formDataToSend.append("phone", formData.phone);
+        formDataToSend.append("subject", formData.subject);
+        formDataToSend.append("message", formData.message);
+        formDataToSend.append("diamondType", formData.diamondType);
+        formDataToSend.append("country", formData.country);
+
+        try {
+            const response = await fetch("https://getform.io/f/bejvyyya", {
+                method: "POST",
+                body: formDataToSend,
+            });
+
+            if (response.ok) {
+                alert("Thank you for reaching out! We will contact you soon.");
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    subject: "",
+                    message: "",
+                    diamondType: "",
+                    country: "",
+                });
+            } else {
+                alert("Something went wrong! Try again.");
+            }
+        } catch (error) {
+            alert("Error submitting form!");
+        }
+    };
 
     return (
         <div className="min-h-screen">
+
             {/* Hero Section */}
             <section className="py-16 bg-surface">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">Contact Us</h1>
                     <p className="text-xl text-muted-foreground max-w-3xl">
                         Have questions about our diamonds or jewelry? Our expert team is here to help you find exactly
-                        what you're
-                        looking for.
+                        what you're looking for.
                     </p>
                 </div>
             </section>
@@ -45,6 +79,7 @@ export default function Contact() {
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
                         {/* Contact Info */}
                         <div>
                             <h2 className="text-2xl font-serif font-bold mb-8">Get in Touch</h2>
@@ -53,11 +88,7 @@ export default function Contact() {
                                 <div>
                                     <h3 className="font-semibold mb-2">Address</h3>
                                     <p className="text-muted-foreground">
-                                        123 Diamond Plaza
-                                        <br/>
-                                        New York, NY 10001
-                                        <br/>
-                                        United States
+                                        123 Diamond Plaza<br/>New York, NY 10001<br/>United States
                                     </p>
                                 </div>
 
@@ -78,24 +109,16 @@ export default function Contact() {
                                         </a>
                                     </p>
                                 </div>
-
-                                <div>
-                                    <h3 className="font-semibold mb-2">Hours</h3>
-                                    <p className="text-muted-foreground">
-                                        Monday - Friday: 10am - 6pm
-                                        <br/>
-                                        Saturday: 11am - 5pm
-                                        <br/>
-                                        Sunday: By Appointment
-                                    </p>
-                                </div>
                             </div>
                         </div>
 
                         {/* Contact Form */}
                         <div className="lg:col-span-2">
                             <form onSubmit={handleSubmit} className="space-y-6">
+
+                                {/* Row 1 */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
                                     <div>
                                         <label className="block text-sm font-semibold mb-2">Name</label>
                                         <input
@@ -104,10 +127,11 @@ export default function Contact() {
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent"
+                                            className="w-full px-4 py-2 border border-border rounded-lg"
                                             placeholder="Your name"
                                         />
                                     </div>
+
                                     <div>
                                         <label className="block text-sm font-semibold mb-2">Email</label>
                                         <input
@@ -116,22 +140,60 @@ export default function Contact() {
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent"
+                                            className="w-full px-4 py-2 border border-border rounded-lg"
                                             placeholder="Your email"
                                         />
                                     </div>
                                 </div>
 
+                                {/* Phone */}
                                 <div>
                                     <label className="block text-sm font-semibold mb-2">Phone</label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
+                                    <PhoneInput
+                                        defaultCountry="us"
                                         value={formData.phone}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent"
-                                        placeholder="Your phone number"
+                                        onChange={(value) =>
+                                            setFormData((prev) => ({...prev, phone: value}))
+                                        }
+                                        className="custom-phone-input w-full"
                                     />
+                                </div>
+
+                                {/* Diamond Type + Country in one row */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label className="block text-sm font-semibold mb-2">Diamond Type</label>
+                                        <select
+                                            name="diamondType"
+                                            value={formData.diamondType}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-2 border border-border rounded-lg"
+                                        >
+                                            <option value="">Select Type</option>
+                                            <option value="Lab Grown (CVD)">Lab Grown (CVD)</option>
+                                            <option value="Lab Grown (HPHT)">Lab Grown (HPHT)</option>
+                                            <option value="Natural">Natural</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-sm font-semibold mb-2">Country</label>
+                                        <select
+                                            name="country"
+                                            value={formData.country}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-2 border border-border rounded-lg"
+                                        >
+                                            <option value="">Select Country</option>
+                                            <option value="United States">United States</option>
+                                            <option value="India">India</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Australia">Australia</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div>
@@ -142,7 +204,7 @@ export default function Contact() {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent"
+                                        className="w-full px-4 py-2 border border-border rounded-lg"
                                         placeholder="What is this about?"
                                     />
                                 </div>
@@ -153,9 +215,9 @@ export default function Contact() {
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
-                                        required
                                         rows="6"
-                                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent"
+                                        required
+                                        className="w-full px-4 py-2 border border-border rounded-lg"
                                         placeholder="Tell us more..."
                                     ></textarea>
                                 </div>
@@ -166,24 +228,13 @@ export default function Contact() {
                                 >
                                     Send Message
                                 </button>
+
                             </form>
                         </div>
+
                     </div>
                 </div>
             </section>
-
-            {/* Map Placeholder */}
-            <section className="h-96 bg-surface">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.8381784405483!2d72.88539547578958!3d21.23826458054884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f30e39d8b35%3A0xaaff5b6c047a2b53!2sTopcodx%20Infotech!5e0!3m2!1sen!2sin!4v1764166624224!5m2!1sen!2sin"
-                    className="w-full h-full"
-                    style={{border: 0}}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-            </section>
-
         </div>
     )
 }
