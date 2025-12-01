@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import {PhoneInput} from "react-international-phone";
+import "react-international-phone/style.css"
 
 export default function Careers() {
     const [formData, setFormData] = useState({
@@ -219,15 +220,20 @@ export default function Careers() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm font-semibold mb-2">Phone</label>
-                                <PhoneInput
-                                    defaultCountry="us"
-                                    value={formData.phone}
-                                    onChange={(value) =>
-                                        setFormData((prev) => ({...prev, phone: value}))
-                                    }
-                                    className="custom-phone-input w-full"
-                                />
+                                <label className="block text-sm font-semibold mb-2">Years of Experience *</label>
+                                <select
+                                    name="experience"
+                                    value={formData.experience}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent bg-background"
+                                >
+                                    <option value="">Select experience level</option>
+                                    <option value="0-2">0-2 years</option>
+                                    <option value="2-5">2-5 years</option>
+                                    <option value="5-10">5-10 years</option>
+                                    <option value="10+">10+ years</option>
+                                </select>
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold mb-2">Position Interested In *</label>
@@ -247,22 +253,16 @@ export default function Careers() {
                                 </select>
                             </div>
                         </div>
-
                         <div>
-                            <label className="block text-sm font-semibold mb-2">Years of Experience *</label>
-                            <select
-                                name="experience"
-                                value={formData.experience}
-                                onChange={handleChange}
-                                required
-                                className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent bg-background"
-                            >
-                                <option value="">Select experience level</option>
-                                <option value="0-2">0-2 years</option>
-                                <option value="2-5">2-5 years</option>
-                                <option value="5-10">5-10 years</option>
-                                <option value="10+">10+ years</option>
-                            </select>
+                            <label className="block text-sm font-semibold mb-2">Phone</label>
+                            <PhoneInput
+                                defaultCountry="us"
+                                value={formData.phone}
+                                onChange={(value) =>
+                                    setFormData((prev) => ({...prev, phone: value}))
+                                }
+                                className="custom-phone-input w-full"
+                            />
                         </div>
 
                         <div>
