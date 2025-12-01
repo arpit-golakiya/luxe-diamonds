@@ -27,23 +27,18 @@ export default function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const formDataToSend = new FormData();
-        formDataToSend.append("name", formData.name);
-        formDataToSend.append("email", formData.email);
-        formDataToSend.append("phone", formData.phone);
-        formDataToSend.append("subject", formData.subject);
-        formDataToSend.append("message", formData.message);
-        formDataToSend.append("diamondType", formData.diamondType);
-        formDataToSend.append("country", formData.country);
-
         try {
-            const response = await fetch("https://getform.io/f/bejvyyya", {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbywjUQkmtSO6DeRgIz9AxPd4zn2pimv6XpCoVlu7FC-v-5eOcN3yKp4ZWAfoReuK7959g/exec\n", {
                 method: "POST",
-                body: formDataToSend,
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
             });
 
-            if (response.ok) {
-                alert("Thank you for reaching out! We will contact you soon.");
+            const result = await response.json();
+
+            if (result.status === "success") {
+                alert("Thank you! We will connect with you soon.");
+
                 setFormData({
                     name: "",
                     email: "",
@@ -54,10 +49,10 @@ export default function Contact() {
                     country: "",
                 });
             } else {
-                alert("Something went wrong! Try again.");
+                alert("Error submitting form!");
             }
         } catch (error) {
-            alert("Error submitting form!");
+            alert("Failed to submit!");
         }
     };
 
