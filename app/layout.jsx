@@ -59,6 +59,9 @@ export default function RootLayout({ children }) {
                         <Link href="/guide" className="text-md hover:text-accent transition">
                             4C Guide
                         </Link>
+                        <Link href="/blog" className="text-md hover:text-accent transition">
+                            Blog
+                        </Link>
                         <Link href="/contact" className="text-md hover:text-accent transition">
                             Contact
                         </Link>
@@ -96,6 +99,9 @@ export default function RootLayout({ children }) {
                         </div>
                         <Link href="/guide" className="block py-2 text-sm">
                             4C Guide
+                        </Link>
+                        <Link href="/blog" className="block py-2 text-sm">
+                            Blog
                         </Link>
                         <Link href="/contact" className="block py-2 text-sm">
                             Contact
