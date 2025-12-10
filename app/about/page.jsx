@@ -44,7 +44,7 @@ export default function About() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        About LUXE Diamonds
+                        Ishanta Jewels
                     </motion.h1>
                     <motion.p
                         className="text-xl text-muted-foreground max-w-3xl"
@@ -52,8 +52,8 @@ export default function About() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        For over a decade, we've been dedicated to bringing the finest diamonds and jewelry to discerning customers
-                        worldwide.
+                        A distinguished manufacturer and wholesaler specializing in premium custom diamond jewelry and an extensive
+                        portfolio of finely crafted diamonds in all shapes and sizes.
                     </motion.p>
                 </div>
             </motion.section>
@@ -74,18 +74,13 @@ export default function About() {
                         >
                             <h2 className="text-3xl font-serif font-bold mb-6">Our Story</h2>
                             <p className="text-lg text-muted-foreground mb-4">
-                                LUXE Diamonds was founded with a single mission: to make premium diamonds accessible without
-                                compromising on quality or ethics. We believe that every person deserves to own a piece of timeless
-                                beauty.
+                                Ishanta Jewels Pvt. Ltd. is a distinguished manufacturer and wholesaler specializing in premium custom diamond jewelry and an extensive portfolio of finely crafted diamonds in all shapes and sizes.
                             </p>
                             <p className="text-lg text-muted-foreground mb-4">
-                                Our journey began with a passion for gemstones and a commitment to transparency. Today, we work directly
-                                with certified suppliers and master craftspeople to bring you diamonds and jewelry that exceed
-                                expectations.
+                                Founded in 2010 by visionary entrepreneurs, Ishanta Jewels was established with a singular philosophy: to deliver exquisite craftsmanship with exceptional efficiency. Built on precision, trust, and refined artistry, the brand has evolved into a respected global partner for B2B clients, offering both certified and non-certified diamonds, alongside exclusive designer diamond jewelry.
                             </p>
                             <p className="text-lg text-muted-foreground">
-                                From natural diamonds to lab-grown alternatives, we offer choices that align with your values and
-                                preferences.
+                                With a dedicated international sales team, Ishanta Jewels ensures responsive service and seamless coordination, enabling clients worldwide to experience reliability and consistency at every stage of engagement.
                             </p>
                         </motion.div>
                         <motion.div
@@ -95,13 +90,72 @@ export default function About() {
                             transition={{ duration: 0.8, delay: 0.4 }}
                             whileHover={{ scale: 1.05 }}
                         >
-                            <Image src="/about_us.png" alt="About LUXE Diamonds" fill className="object-cover" priority />
+                            <Image src="/about_us.png" alt="Ishanta Jewels" fill className="object-cover" priority />
                         </motion.div>
                     </motion.div>
                 </div>
             </section>
 
             <section className="py-20 bg-surface">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        className="max-w-3xl mx-auto text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl font-serif font-bold mb-6">Craftsmanship & Manufacturing Excellence</h2>
+                        <p className="text-lg text-muted-foreground mb-4">
+                            Ishanta Jewels operates a state-of-the-art in-house manufacturing facility for loose diamonds and fine diamond jewelry in Surat, the diamond capital of the world. This integrated infrastructure allows us to maintain uncompromising quality standards while offering competitive pricing—delivering superior value that distinguishes us among leading suppliers from India and across global markets.
+                        </p>
+                        <p className="text-lg text-muted-foreground">
+                            Each creation reflects a harmonious blend of advanced technology, master craftsmanship, and meticulous attention to detail.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            <section className="py-20 bg-background">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        className="max-w-3xl mx-auto text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl font-serif font-bold mb-6">Our Promise</h2>
+                        <p className="text-lg text-muted-foreground">
+                            At Ishanta Jewels, our clients are more than partners—they are an extension of our legacy. Ethical business practices, transparency, and integrity form the foundation of every relationship we build. Every order undergoes rigorous quality assurance, ensuring that each piece meets the highest standards of excellence.
+                        </p>
+                        <p className="text-lg text-muted-foreground">
+                            Choosing Ishanta Jewels is a commitment to refined quality, trust, and enduring value.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+            <section className="py-20 bg-background">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        className="max-w-3xl mx-auto text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl font-serif font-bold mb-6">Our Mission</h2>
+                        <p className="text-lg text-muted-foreground">
+                            To create and supply ethically sourced diamonds and fine jewelry that embody timeless elegance and
+                            superior craftsmanship. We are committed to exceeding expectations through unparalleled service,
+                            transparent operations, and sustainable practices—so that every piece crafted by Ishanta Jewels becomes a
+                            lasting symbol of brilliance, responsibility, and distinction. 💎
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.h2
                         className="text-4xl font-serif font-bold text-center mb-16"
@@ -119,7 +173,7 @@ export default function About() {
                         variants={containerVariants}
                     >
                         <motion.div
-                            className="bg-background p-8 rounded-lg"
+                            className="bg-surface p-8 rounded-lg"
                             variants={itemVariants}
                             whileHover={{ y: -8, transition: { duration: 0.3 } }}
                         >
@@ -130,7 +184,7 @@ export default function About() {
                             </p>
                         </motion.div>
                         <motion.div
-                            className="bg-background p-8 rounded-lg"
+                            className="bg-surface p-8 rounded-lg"
                             variants={itemVariants}
                             whileHover={{ y: -8, transition: { duration: 0.3 } }}
                         >
@@ -139,7 +193,7 @@ export default function About() {
                             <p className="text-muted-foreground">We maintain the highest standards in quality and craftsmanship.</p>
                         </motion.div>
                         <motion.div
-                            className="bg-background p-8 rounded-lg"
+                            className="bg-surface p-8 rounded-lg"
                             variants={itemVariants}
                             whileHover={{ y: -8, transition: { duration: 0.3 } }}
                         >
@@ -151,7 +205,7 @@ export default function About() {
                 </div>
             </section>
 
-            <section className="py-20 bg-background">
+            <section className="py-20 bg-surface">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.h2
                         className="text-4xl font-serif font-bold text-center mb-16"
@@ -193,6 +247,7 @@ export default function About() {
                     </motion.div>
                 </div>
             </section>
+
         </div>
     )
 }
