@@ -88,15 +88,17 @@ export default function Guide() {
                                 <div className="text-4xl font-bold text-accent mb-2">C</div>
                                 <h2 className="text-4xl font-serif font-bold mb-4">Carat Weight</h2>
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    Carat weight measures the mass of a diamond. One carat equals 200 milligrams. While heavier diamonds
-                                    are rarer and generally more valuable, two diamonds of equal carat weight can have significantly
-                                    different values based on their cut, color, and clarity.
+                                    Diamond carat weight is the measurement of how much a diamond weights. A metric “carat” is defined as 200 milligrams.
                                 </p>
-                                <ul className="space-y-2 text-muted-foreground">
-                                    <li>• Measured in carats (ct)</li>
-                                    <li>• 1 carat = 100 points</li>
-                                    <li>• Price increases exponentially with carat weight</li>
-                                </ul>
+                                <p className="text-lg text-muted-foreground mb-4">
+                                    Each carat can be subdivided into 100 ‘points.’ This allows very precise measurements to the hundredth decimal place. A jeweler may describe the weight of a diamond below one carat by its ‘points’ alone. For instance, the jeweler may refer to a diamond that weights 0.25 carats as a ‘twenty-five pointers.’ Diamond weights greater than one carat are expressed in carats and decimals. A 1.08 carat stone would be described as ‘one point oh eight carats.’
+                                </p>
+                                <p className="text-lg text-muted-foreground mb-4">
+                                    All else being equal, diamond price increases with diamond carat weight because larger diamonds are more rare and more desirable. But two diamonds of equal carat weight can have very different values (and prices) depending on three other factors of the diamond 4Cs: Clarity, Color, and Cut.
+                                </p>
+                                <p className="text-lg text-muted-foreground mb-4">
+                                    It’s important to remember that a diamond’s value is determined using all of the 4Cs, not just carat weight.
+                                </p>
                             </motion.div>
                         </motion.div>
 
@@ -106,15 +108,8 @@ export default function Guide() {
                                 <div className="text-4xl font-bold text-accent mb-2">C</div>
                                 <h2 className="text-4xl font-serif font-bold mb-4">Cut</h2>
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    Cut refers to how well a diamond's facets interact with light. It's often considered the most
-                                    important of the 4Cs because it directly affects the diamond's brilliance and sparkle. A well-cut
-                                    diamond will reflect light beautifully.
+                                    Cut is the only diamond component not influenced by nature, and it’s considered as most important of the 4Cs. This factor refers to the quality of the diamond's cut, not the shape or size (although these can be interchangeable), and how well the stone is faceted, proportioned, and polished. This also determines how the diamond interacts with light. Brilliance, which is the diamond's ability to return light to the eye, is measured solely by the stone's cut (color and clarity have no impact). For any diamond shape, visually, cut is the first C to consider, followed by color, and, least as important, clarity (as long as the diamond has no visible imperfections).
                                 </p>
-                                <ul className="space-y-2 text-muted-foreground">
-                                    <li>• Ideal, Excellent, Very Good, Good, Fair, Poor</li>
-                                    <li>• Affects light reflection and sparkle</li>
-                                    <li>• Most impactful on visual beauty</li>
-                                </ul>
                             </motion.div>
                             <motion.div
                                 className="relative h-72 rounded-lg overflow-hidden"
@@ -138,15 +133,8 @@ export default function Guide() {
                                 <div className="text-4xl font-bold text-accent mb-2">C</div>
                                 <h2 className="text-4xl font-serif font-bold mb-4">Color</h2>
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    Color in diamonds is graded on a scale from D (colorless) to Z (light color). Colorless diamonds are
-                                    the most valuable. Most diamonds on the D-Z scale appear colorless to the naked eye, with the
-                                    differences visible only under magnification.
+                                    Diamond color is actually the absence of color. Everyone has a different tolerance for how much color they like in a diamond. H and G are near colorless, or a warm white and are the best value for a "colorless" diamond. F and E are completely colorless and are a pure cool white, these stones in my opinion are the perfect diamond color. D is the rarest and coolest white available, and the most expensive.
                                 </p>
-                                <ul className="space-y-2 text-muted-foreground">
-                                    <li>• Graded D (colorless) to Z (light color)</li>
-                                    <li>• Most differences visible only under magnification</li>
-                                    <li>• Affects rarity and price</li>
-                                </ul>
                             </motion.div>
                         </motion.div>
 
@@ -156,15 +144,8 @@ export default function Guide() {
                                 <div className="text-4xl font-bold text-accent mb-2">C</div>
                                 <h2 className="text-4xl font-serif font-bold mb-4">Clarity</h2>
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    Clarity refers to the absence of inclusions and blemishes in a diamond. It's graded on a scale from
-                                    Flawless to Included. Most diamonds contain some internal or external characteristics that don't
-                                    affect their beauty to the naked eye.
+                                    Diamonds are stones formed in the earth under extreme pressure, these rocks when forming crack, cloud and spots of uncrystallized carbon can become trapped as black specks. Inclusions are not bad, and MOST diamonds have them in one form or another. Depending where the inclusions are, how many there are and of what type, they are often invisible to the unaided, untrained eye. Diamond clarity refers to the absence of these inclusions and blemishes. Diamonds without inclusions are very rare and are graded as IF or Internally Flawless. Inclusions do affect the value of the diamond, and can affect the stone's brilliance if the are grouped tightly together or if they are scattered throughout the diamond. The inclusions break up the light entering and leaving the diamond, making it less brilliant. SI2 and SI1 can be very clean and are the best value. VS diamonds will be more brilliant, and will sell for a higher price than the SI diamonds.
                                 </p>
-                                <ul className="space-y-2 text-muted-foreground">
-                                    <li>• Flawless (FL) to Included (I)</li>
-                                    <li>• Many inclusions invisible to naked eye</li>
-                                    <li>• Significantly impacts price</li>
-                                </ul>
                             </motion.div>
                             <motion.div
                                 className="relative h-72 rounded-lg overflow-hidden"
