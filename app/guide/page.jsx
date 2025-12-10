@@ -52,7 +52,7 @@ export default function Guide() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        The 4C Guide
+                        The Diamond's 4C Guide
                     </motion.h1>
                     <motion.p
                         className="text-xl text-muted-foreground max-w-3xl"

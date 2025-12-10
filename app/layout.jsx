@@ -39,10 +39,10 @@ export default function RootLayout({ children }) {
                             Home
                         </Link>
                         <Link href="/about" className="text-md hover:text-accent transition">
-                            About
+                            About us
                         </Link>
                         <div className="group relative">
-                            <button className="text-md hover:text-accent transition">Products</button>
+                            <button className="text-md hover:text-accent transition">Our Products</button>
                             <div
                                 className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                                 <Link href="/products/natural-diamonds" className="block px-4 py-2 hover:bg-accent/10">
@@ -57,13 +57,13 @@ export default function RootLayout({ children }) {
                             </div>
                         </div>
                         <Link href="/guide" className="text-md hover:text-accent transition">
-                            4C Guide
+                            Diamond's 4C Guide
                         </Link>
                         <Link href="/blog" className="text-md hover:text-accent transition">
-                            Blog
+                            Blogs
                         </Link>
                         <Link href="/contact" className="text-md hover:text-accent transition">
-                            Contact
+                            Contact us
                         </Link>
                         <Link href="/careers" className="text-md hover:text-accent transition">
                             Career
@@ -83,10 +83,10 @@ export default function RootLayout({ children }) {
                             Home
                         </Link>
                         <Link href="/about" className="block py-2 text-sm">
-                            About
+                            About us
                         </Link>
                         <div className="py-2">
-                            <p className="text-sm font-semibold mb-2">Products</p>
+                            <p className="text-sm font-semibold mb-2">Our Products</p>
                             <Link href="/products/natural-diamonds" className="block pl-4 py-1 text-sm">
                                 Natural Diamonds
                             </Link>
@@ -98,13 +98,13 @@ export default function RootLayout({ children }) {
                             </Link>
                         </div>
                         <Link href="/guide" className="block py-2 text-sm">
-                            4C Guide
+                            Diamond's 4C Guide
                         </Link>
                         <Link href="/blog" className="block py-2 text-sm">
-                            Blog
+                            Blogs
                         </Link>
                         <Link href="/contact" className="block py-2 text-sm">
-                            Contact
+                            Contact us
                         </Link>
                         <Link href="/careers" className="block py-2 text-sm">
                             Career
@@ -128,7 +128,7 @@ export default function RootLayout({ children }) {
                         </p>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-4">Products</h4>
+                        <h4 className="font-semibold mb-4">Our Products</h4>
                         <ul className="space-y-2">
                             <li>
                                 <Link href="/products/natural-diamonds" className="text-sm hover:text-accent">
@@ -152,17 +152,17 @@ export default function RootLayout({ children }) {
                         <ul className="space-y-2">
                             <li>
                                 <Link href="/about" className="text-sm hover:text-accent">
-                                    About Us
+                                    About us
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/guide" className="text-sm hover:text-accent">
-                                    4C Guide
+                                    Diamond's 4C Guide
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/contact" className="text-sm hover:text-accent">
-                                    Contact
+                                    Contact us
                                 </Link>
                             </li>
                         </ul>
