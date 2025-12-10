@@ -6,27 +6,32 @@ export default function Terms() {
 
                 <div className="space-y-10 text-muted-foreground">
                     <section>
-                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Agreement to Terms</h2>
-                        <p>
-                            By accessing and using the LUXE Diamonds website, you accept and agree to be bound by the terms and
-                            provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Fair & Fixed Price Policy</h2>
+                        <p className="mb-2">
+                            Customer care is our paramount concern for prosperity and peace. To uphold this ethos, we have embraced a "Fair & Fixed Price Policy" for finalizing business deals.
+                        </p>
+                        <p className="mb-2">
+                            All prices are expressed in USD and are based on product quality & current market research to remain competitive in local or international markets.
+                        </p>
+                        <p className="mb-2">
+                            Given Prices does not include local Taxes or duties/Bank Charges & shipping cost.
+                        </p>
+                        <p className="mb-2">
+                            Shipping cost will depend on the shipment value & destination of receipt please contact our representative for more information on it.
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Use License</h2>
-                        <p className="mb-4">
-                            Permission is granted to temporarily download one copy of the materials (information or software) on LUXE
-                            Diamonds' website for personal, non-commercial transitory viewing only. This is the grant of a license,
-                            not a transfer of title, and under this license you may not:
+                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Benefits </h2>
+                        <p className="mb-2">
+                            It will save significant TIME for both parties involved, allowing for constructive use towards enhancing mutual benefits.
                         </p>
-                        <ul className="list-disc pl-6 space-y-2">
-                            <li>Modify or copy the materials</li>
-                            <li>Use the materials for any commercial purpose or for any public display</li>
-                            <li>Attempt to decompile or reverse engineer any software contained on the Site</li>
-                            <li>Remove any copyright or other proprietary notations from the materials</li>
-                            <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
-                        </ul>
+                        <p className="mb-2">
+                            It will save significant TIME for both parties involved, allowing for constructive use towards enhancing mutual benefits.
+                        </p>
+                        <p className="mb-2">
+                            The right quality at the right price will be available to you at your fingertips so you can choose from wide range of our online inventory.
+                        </p>
                     </section>
 
                     <section>
@@ -40,29 +45,49 @@ export default function Terms() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Limitations</h2>
-                        <p>
-                            In no event shall LUXE Diamonds or its suppliers be liable for any damages (including, without limitation,
-                            damages for loss of data or profit, or due to business interruption) arising out of the use or inability
-                            to use the materials on LUXE Diamonds' website.
+                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Payments</h2>
+                        <p className="mb-2">
+                            All prices are set based on advance payment terms only and are expressed in USD, unless specified otherwise. Prices do not include any additional duties, taxes, or bank charges.
+                        </p>
+                        <p className="mb-2">
+                            All prices are subject to change without any prior notification till the confirmation of the order.
+                        </p>
+                        <p className="mb-2">
+                            Payments for confirmed orders must be paid in advance within the 7 working days from the day of confirmation.
+                        </p>
+                        <p className="mb-2">
+                            TT copy or MT-103 should be forwarded to us for all payments remitted in form of international wire transfers.
+                        </p>
+                        <p className="mb-2">
+                            Full Payment as mentioned on Proforma Invoice should be credited to our bank account irrespective of any bank charges
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Accuracy of Materials</h2>
-                        <p>
-                            The materials appearing on LUXE Diamonds' website could include technical, typographical, or photographic
-                            errors. LUXE Diamonds does not warrant that any of the materials on the website are accurate, complete, or
-                            current. LUXE Diamonds may make changes to the materials contained on its website at any time without
-                            notice.
+                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Shipping</h2>
+                        <p className="mb-2">
+                            The ordered goods will be shipped through your convenient carriers after receipt of funds in our bank only.
                         </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Contact Information</h2>
-                        <p>
-                            If you have any questions about these Terms and Conditions, please contact us at legal@luxediamonds.com or
-                            by mail at 123 Diamond Plaza, New York, NY 10001.
+                        <p className="mb-2">
+                            The goods will be shipped to your doorsteps through carriers like Malca-Amit, Brinks, BVC Express, UPS, or FedEx on a C&F basis.
+                        </p>
+                        <p className="mb-2">
+                            Door-to-door insurance will be covered by the above-mentioned carriers.
+                        </p>
+                        <p className="mb-2">
+                            The Company reserves rights to refuse shipments to certain international destinations where logistic companies are not serviceable.
+                        </p>
+                        <p className="mb-2">
+                            We can ship your purchased product from any of our regional or affiliated offices.
+                        </p>
+                        <p className="mb-2">
+                            Shipping charges will be depend on the shipment value & destination please contact your account manager for more information.
+                        </p>
+                        <p className="mb-2">
+                            Shipping charges include the cost of shipping from our office to the nearest International Airport. Destination charges (i.e., from Airport to buyer's place, or any import duties or taxes in destination country) are to be borne by the ordering customers only.
+                        </p>
+                        <p className="mb-2">
+                            Please Note: Ishanta Jewels reserves the rights to make changes to these Terms and Conditions at any time without prior notifications.
                         </p>
                     </section>
                 </div>
