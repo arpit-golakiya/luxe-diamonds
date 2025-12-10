@@ -188,7 +188,7 @@ export default function RootLayout({ children }) {
                     <h4 className="font-semibold mb-4">Follow Us</h4>
                     <div className="flex gap-6">
                         <a
-                            href="https://instagram.com"
+                            href="https://www.instagram.com/ishanta_jewels_pvt_ltd"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-accent transition-colors"
@@ -197,7 +197,7 @@ export default function RootLayout({ children }) {
                             <Instagram size={24}/>
                         </a>
                         <a
-                            href="https://facebook.com"
+                            href="https://www.facebook.com/profile.php?id=61558748786353"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-accent transition-colors"
@@ -206,7 +206,7 @@ export default function RootLayout({ children }) {
                             <Facebook size={24}/>
                         </a>
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/company/ishanta-jewels"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-accent transition-colors"
