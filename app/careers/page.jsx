@@ -32,20 +32,24 @@ export default function Careers() {
         }))
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log("Application submitted:", formData)
-        alert("Thank you for your application! We will review it and get back to you soon.")
-        setFormData({
-            fullName: "",
-            email: "",
-            phone: "",
-            position: "",
-            experience: "",
-            resume: null,
-            message: "",
-        })
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const response = await fetch("/api/careers", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+            alert("Application submitted successfully!");
+        } else {
+            alert("Submission failed");
+        }
+    };
+
 
     const jobOpenings = [
         {
