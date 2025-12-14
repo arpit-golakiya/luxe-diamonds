@@ -130,7 +130,7 @@ export default function RootLayout({ children }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <h3 className="text-lg font-serif font-bold text-white mb-4">Ishanta Diamonds</h3>
+                        <h3 className="text-lg font-serif font-bold text-white mb-4">Ishanta Jewels</h3>
                         <p className="text-sm text-white">
                             Crafting timeless elegance through premium diamonds and exceptional jewelry.
                         </p>
@@ -226,7 +226,7 @@ export default function RootLayout({ children }) {
                 </div>
 
                 <div className="border-t border-border pt-8 text-center text-sm text-white">
-                    <p>&copy; 2025 Ishanta Diamonds. All rights reserved.</p>
+                    <p>&copy; 2025 Ishanta Jewels. All rights reserved.</p>
                 </div>
             </div>
         </footer>
