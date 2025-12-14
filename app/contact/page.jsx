@@ -84,15 +84,15 @@ export default function Contact() {
                                 <div>
                                     <h3 className="font-semibold mb-2">Address</h3>
                                     <p className="text-muted-foreground">
-                                        123 Diamond Plaza<br/>New York, NY 10001<br/>United States
+                                        201 Vyas Compound ASHRAM CHAR RATSA, <br/>beside AMAR ELECTRONICS, <br/>Bambavadi, Tunki, Katargam,<br/>Surat 394101
                                     </p>
                                 </div>
 
                                 <div>
                                     <h3 className="font-semibold mb-2">Phone</h3>
                                     <p className="text-muted-foreground">
-                                        <a href="tel:+12125551234" className="hover:text-accent">
-                                            +1 (212) 555-1234
+                                        <a href="tel:+918487818980" className="hover:text-accent">
+                                            +91 84878 18980
                                         </a>
                                     </p>
                                 </div>
