@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import "./globals.css"
 import WhatsappWidget from "../components/WhatsappWidget";
-import { Facebook, Instagram, Linkedin } from "lucide-react"
+import { Facebook, Instagram, Linkedin, MessagesSquare } from "lucide-react"
 
 export default function RootLayout({ children }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>Luxe Diamonds - Premium Diamond Jewelry</title>
+            <title>Ishanta Jewels - Premium Diamond Jewelry</title>
             <meta
                 name="description"
                 content="Discover premium diamonds and luxury jewelry. Natural and lab-grown diamonds crafted to perfection."
@@ -29,8 +29,8 @@ export default function RootLayout({ children }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <Link href="/" className="flex items-center">
-                        <span className="text-2xl font-serif font-bold text-white">LUXE</span>
-                        <span className="text-2xl font-serif text-white text-foreground ml-1">Diamonds</span>
+                        <span className="text-2xl font-serif font-bold text-white">Ishanta</span>
+                        <span className="text-2xl font-serif text-white text-foreground ml-1">Jewels</span>
                     </Link>
 
                     {/* Desktop Menu */}
@@ -62,11 +62,15 @@ export default function RootLayout({ children }) {
                         <Link href="/blog" className="text-md text-white transition">
                             Blogs
                         </Link>
-                        <Link href="/contact" className="text-md text-white transition">
-                            Contact us
-                        </Link>
                         <Link href="/careers" className="text-md text-white transition">
                             Career
+                        </Link>
+                        <Link
+                            href="/contact"
+                            className="flex items-center gap-2 text-md text-white border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-accent transition-all duration-300"
+                        >
+                            <MessagesSquare size={18} />
+                            Get Quote
                         </Link>
                     </div>
 
@@ -103,11 +107,15 @@ export default function RootLayout({ children }) {
                         <Link href="/blog" className="block text-white py-2 text-sm">
                             Blogs
                         </Link>
-                        <Link href="/contact" className="block text-white py-2 text-sm">
-                            Contact us
-                        </Link>
                         <Link href="/careers" className="block text-white py-2 text-sm">
                             Career
+                        </Link>
+                        <Link
+                            href="/contact"
+                            className="flex items-center gap-2 text-sm text-white border-2 border-white px-4 py-2 rounded-lg mt-2 hover:bg-white hover:text-accent transition-all duration-300 w-fit"
+                        >
+                            <MessagesSquare size={16} />
+                            Get Quote
                         </Link>
                     </div>
                 )}
@@ -122,7 +130,7 @@ export default function RootLayout({ children }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <h3 className="text-lg font-serif font-bold text-white mb-4">LUXE Diamonds</h3>
+                        <h3 className="text-lg font-serif font-bold text-white mb-4">Ishanta Diamonds</h3>
                         <p className="text-sm text-white">
                             Crafting timeless elegance through premium diamonds and exceptional jewelry.
                         </p>
@@ -218,7 +226,7 @@ export default function RootLayout({ children }) {
                 </div>
 
                 <div className="border-t border-border pt-8 text-center text-sm text-white">
-                    <p>&copy; 2025 LUXE Diamonds. All rights reserved.</p>
+                    <p>&copy; 2025 Ishanta Diamonds. All rights reserved.</p>
                 </div>
             </div>
         </footer>

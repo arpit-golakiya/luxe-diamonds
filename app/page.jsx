@@ -299,7 +299,7 @@ export default function Home() {
                         animate={isWhyChooseInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Why Choose LUXE
+                        Why Choose Ishanta
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -383,7 +383,7 @@ export default function Home() {
 
                         {/* Email Card */}
                         <motion.a
-                            href="mailto:info@luxediamonds.com"
+                            href="mailto:info@ishantajewels.com"
                             className="group bg-white border-2 border-gray-100 rounded-lg p-8 text-center hover:border-accent hover:shadow-lg transition duration-300"
                             custom={1}
                             variants={contactCardVariants}
@@ -400,7 +400,7 @@ export default function Home() {
                             </motion.div>
                             <p className="text-gray-600 text-sm mb-2">Email us</p>
                             <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition break-all">
-                                info@luxediamonds.com
+                                info@ishantajewels.com
                             </h3>
                         </motion.a>
                     </div>

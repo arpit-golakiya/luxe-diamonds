@@ -37,7 +37,7 @@ export default function Terms() {
                     <section>
                         <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Disclaimer</h2>
                         <p>
-                            The materials on LUXE Diamonds' website are provided on an 'as is' basis. LUXE Diamonds makes no
+                            The materials on Ishanta Diamonds' website are provided on an 'as is' basis. Ishanta Diamonds makes no
                             warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without
                             limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or
                             non-infringement of intellectual property or other violation of rights.

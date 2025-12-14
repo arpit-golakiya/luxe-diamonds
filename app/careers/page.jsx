@@ -95,7 +95,7 @@ export default function Careers() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-foreground">Join Our Team</h1>
                     <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                        At LUXE Diamonds, we're passionate about creating timeless elegance and exceptional experiences. We're
+                        At Ishanta Diamonds, we're passionate about creating timeless elegance and exceptional experiences. We're
                         looking for talented individuals who share our commitment to excellence and craftsmanship.
                     </p>
                 </div>
@@ -104,7 +104,7 @@ export default function Careers() {
             {/* Why Join Us Section */}
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-4xl font-serif font-bold mb-12 text-center">Why Join LUXE Diamonds?</h2>
+                    <h2 className="text-4xl font-serif font-bold mb-12 text-center">Why Join Ishanta Diamonds?</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             {
@@ -273,7 +273,7 @@ export default function Careers() {
                                 onChange={handleChange}
                                 rows="5"
                                 className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent bg-background resize-none"
-                                placeholder="Tell us why you'd be a great fit for LUXE Diamonds..."
+                                placeholder="Tell us why you'd be a great fit for Ishanta Diamonds..."
                             ></textarea>
                         </div>
 
@@ -329,10 +329,10 @@ export default function Careers() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-serif font-bold mb-4">Ready to Shine?</h2>
                     <p className="text-lg mb-8 opacity-90">
-                        Have questions? Reach out to our HR team at careers@luxediamonds.com
+                        Have questions? Reach out to our HR team at info@ishantajewels.com
                     </p>
                     <a
-                        href="mailto:careers@luxediamonds.com"
+                        href="mailto:info@ishantajewels.com"
                         className="inline-block px-8 py-3 bg-accent-foreground text-accent font-semibold rounded-lg hover:opacity-90 transition"
                     >
                         Contact HR

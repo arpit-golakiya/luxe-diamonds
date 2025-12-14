@@ -100,8 +100,8 @@ export default function Contact() {
                                 <div>
                                     <h3 className="font-semibold mb-2">Email</h3>
                                     <p className="text-muted-foreground">
-                                        <a href="mailto:info@luxediamonds.com" className="hover:text-accent">
-                                            info@luxediamonds.com
+                                        <a href="mailto:info@ishantajewels.com" className="hover:text-accent">
+                                            info@ishantajewels.com
                                         </a>
                                     </p>
                                 </div>

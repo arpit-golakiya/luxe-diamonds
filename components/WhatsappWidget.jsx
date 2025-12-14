@@ -20,7 +20,7 @@ export default function WhatsappWidget() {
                     {/* Header */}
                     <div className="bg-green-700 text-white p-4 flex justify-between items-center">
                         <div>
-                            <h3 className="font-semibold text-lg">Luxe Diamonds</h3>
+                            <h3 className="font-semibold text-lg">Ishanta Diamonds</h3>
                             <p className="text-xs opacity-80">Typically replies within minutes</p>
                         </div>
                         <button
