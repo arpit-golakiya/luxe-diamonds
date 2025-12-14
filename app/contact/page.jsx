@@ -27,35 +27,24 @@ export default function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbzMYp_gcnlY1yOUNWLZtJSeA3sEmAz7jQi1c4DvTVhjuagG4oTTRgwwsuQH8bzPvYsMkw/exec", {
-                method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
 
-            const result = await response.json();
+        const result = await response.json();
 
-            if (result.status === "success") {
-                alert("Thank you! We will connect with you soon.");
-
-                setFormData({
-                    name: "",
-                    email: "",
-                    phone: "",
-                    subject: "",
-                    message: "",
-                    diamondType: "",
-                    country: "",
-                });
-            } else {
-                alert("Error submitting form!");
-            }
-        } catch (error) {
-            alert("Failed to submit!");
+        if (result.status === "success") {
+            alert("Thank you! We will connect with you soon.");
+        } else {
+            alert("Submission failed");
         }
     };
+
+
 
     return (
         <div className="min-h-screen">
