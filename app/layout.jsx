@@ -5,6 +5,7 @@ import Link from "next/link"
 import "./globals.css"
 import WhatsappWidget from "../components/WhatsappWidget";
 import { Facebook, Instagram, Linkedin, MessagesSquare } from "lucide-react"
+import { recoleta } from "./fonts";
 
 export default function RootLayout({ children }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
     }
 
     return (
-        <html lang="en">
+        <html lang="en" className={recoleta.variable}>
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title>Ishanta Jewels - Premium Diamond Jewelry</title>
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
                 content="Discover premium diamonds and luxury jewelry. Natural and lab-grown diamonds crafted to perfection."
             />
         </head>
-        <body className="bg-background text-foreground font-sans">
+        <body className="bg-background text-foreground font-serif">
         {/* Navigation */}
         <nav className="fixed top-0 w-full z-50 bg-accent backdrop-blur">
             {/* FULL WIDTH BAR */}

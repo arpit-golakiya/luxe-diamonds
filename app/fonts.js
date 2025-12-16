@@ -1,22 +1,13 @@
+// app/fonts/index.ts
 import localFont from "next/font/local";
 
 export const recoleta = localFont({
     src: [
-        {
-            path: "../public/fonts/Recoleta/recoleta-regular.woff2",
-            weight: "400",
-            style: "normal",
-        },
-        {
-            path: "../public/fonts/Recoleta/recoleta-medium.woff2",
-            weight: "500",
-            style: "normal",
-        },
-        {
-            path: "../public/fonts/Recoleta/recoleta-bold.woff2",
-            weight: "700",
-            style: "normal",
-        },
+        { path: "../public/fonts/Recoleta/Recoleta-Regular-New.woff2", weight: "400" },
+        { path: "../public/fonts/Recoleta/Recoleta-Medium-New.woff2", weight: "500" },
+        { path: "../public/fonts/Recoleta/Recoleta-SemiBold-New.woff2", weight: "600" },
+        { path: "../public/fonts/Recoleta/Recoleta-Bold-New.woff2", weight: "700" },
     ],
-    variable: "--recoleta",
+    variable: "--font-serif", // ✅ this is the key
+    display: "swap",
 });
