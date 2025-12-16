@@ -125,9 +125,9 @@ export default function Home() {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                         {[
-                            { icon: "✓", title: "GIA Certified", desc: "All diamonds certified by Gemological Institute of America" },
+                            { icon: "✓", title: "IGI_GIA Certified Diamonds", desc: "All diamonds certified by reputed international certification labs" },
                             { icon: "🛡️", title: "Conflict-Free", desc: "100% ethically sourced diamonds" },
-                            { icon: "🏆", title: "30+ Years", desc: "Industry expertise and excellence" },
+                            { icon: "🏆", title: "15+ Years", desc: "Industry expertise and excellence" },
                             { icon: "💎", title: "ISO 9001", desc: "International quality standards" },
                         ].map((badge, i) => (
                             <motion.div

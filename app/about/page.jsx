@@ -229,7 +229,7 @@ export default function About() {
                                 transition={{ duration: 0.5 }}
                                 viewport={{ once: true }}
                             >
-                                25+
+                                15+
                             </motion.div>
                             <p className="text-lg text-muted-foreground">Years of Combined Experience</p>
                         </motion.div>

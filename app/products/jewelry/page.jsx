@@ -168,13 +168,16 @@ export default function DiamondJewelry() {
                         Don't see what you're looking for? Our master craftspeople can create a bespoke piece tailored to your
                         vision.
                     </motion.p>
-                    <motion.button
-                        className="px-10 py-4 bg-accent text-white font-semibold hover:bg-accent-dark transition"
+                    <motion.a
+                        href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-10 py-4 bg-accent text-white font-semibold hover:bg-accent-dark transition"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
                         Start Your Custom Design
-                    </motion.button>
+                    </motion.a>
                 </div>
             </motion.section>
         </div>
