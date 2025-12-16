@@ -1,8 +1,8 @@
 "use client"
 
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import Link from "next/link"
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -16,163 +16,210 @@ const containerVariants = {
 }
 
 const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
-        scale: 1,
-        transition: { duration: 0.5, ease: "easeOut" },
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" },
     },
 }
 
 export default function NaturalDiamonds() {
-    const diamonds = [
+    const { ref: processRef, inView: processInView } = useInView({ threshold: 0.2, triggerOnce: true })
+    const { ref: offeringsRef, inView: offeringsInView } = useInView({ threshold: 0.2, triggerOnce: true })
+
+    const processSteps = [
         {
-            id: 1,
-            name: "Classic Solitaire",
-            carat: "2.15",
-            price: "$15,450",
-            color: "D",
-            image: "/natural_diamonds/classic_solitaire.png",
+            title: "Planning to cut a rough diamond",
+            description:
+                "The most complicated stage in the diamond cutting process is planning and analysing the diamond rough, and it also demands the greatest skill and technology. During the design stages, the cutter will choose the best feasible diamond shapes in order to reduce waste and optimize the rough stone's output. To get precise measurements, the rough stone is often mapped with a Sarin machine. The marker, a highly experienced cutter who weighs all the factors and determines whether a diamond should be sawn or split into pieces, then marks exactly where the cuts should be made, performs these complex computations. This procedure might take months when dealing with huge, expensive gems. Normally, 'Sarin Machine' is used to generate accurate measurements and formulate 3D models that will show the best ways to optimize the rough stone.",
         },
         {
-            id: 2,
-            name: "Brilliant Cut",
-            carat: "1.85",
-            price: "$12,200",
-            color: "E",
-            image: "/natural_diamonds/brilliant_cut.png",
+            title: "Marking",
+            description:
+                "The second step in the diamond production process is the marking of the stone using 3D laser technology. Incorrect marking by a fraction of a millimetre can greatly impact the quality of the final diamond, so after noting any imperfections, a diamond marker may decide to work around an inclusion to polish a few high clarity diamonds from one rough stone, rather than yielding one large diamond of lower clarity grading.",
         },
         {
-            id: 3,
-            name: "Emerald Glory",
-            carat: "2.50",
-            price: "$18,900",
-            color: "F",
-            image: "/natural_diamonds/emerald_glory.png",
+            title: "Cleaving/Sawing",
+            description:
+                "Sawing is the separation of a piece of diamond rough into separate pieces, to be finished as individual diamonds after planning the stone. In Sawing we use Blade or Laser to cut the rough diamond into separate pieces. This may be used to remove extra portions of the diamond as well. Blade Sawing is the technology where we cut the diamonds using highly precise diamond powder coated Blades with low cutting loss. Laser Sawing is using highly precise cutting technology with more atomization and making things more precise and accurate.",
         },
         {
-            id: 4,
-            name: "Royal Radiance",
-            carat: "3.20",
-            price: "$24,700",
-            color: "D",
-            image: "/natural_diamonds/royal_radiance.png",
+            title: "Blocking and Bruting",
+            description:
+                "Once the rough diamond has been reduced to the desired measurements by sawing, it needed to be contoured to achieve the basic shape through the process called Bruting/Gridling. This process requires attentiveness and expertise, in being able to shape the diamond precisely. Bruting can be done through 3 different techniques such as bruting by lasers, rubbing the stone with other diamonds in the opposite directions, disks impregnated with diamond dust. Bruting a diamond is an art and a science. In this process, the friction is produced in either way creating a rough grindle finish and progressively down the corners of the diamond round through abrasion.",
+        },
+        {
+            title: "Polishing",
+            description:
+                "Polishing of the diamond is the process of forming and shaping the facets of the diamond to achieve the optimum amount of reflection and refraction of the white light that brings sparkle and scintillation in the diamond. In the blocking process, the main facets of the diamond including 8 pavilion, 8 crowns, 1 cutlet, and 1 table are formed; by placing a diamond into the tang and lowered on the scaife to polish the 4 main crown facets and 4 main pavilion facets.",
+        },
+        {
+            title: "Certification and Grading Lab",
+            description:
+                "Once polished, every single facet of each individual diamond is carefully revived by both a highly accurate laser scanner as well as by a trained gemmologist. Any diamond that doesn't meet our strict quality control standards is sent back for re-polishing. The diamonds are then sent out to some of the most respected diamond grading laboratories worldwide such as GIA and IGI for certification before being studded in your precious diamond jewellery.",
         },
     ]
 
-    const { ref: cardsRef, inView: cardsInView } = useInView({ threshold: 0.1, triggerOnce: true })
-    const { ref: benefitsRef, inView: benefitsInView } = useInView({ threshold: 0.2, triggerOnce: true })
+    const offerings = [
+        "Loose Parcels & Certified Diamonds",
+        "Round Brilliants & Various Fancy shapes like Oval, Pear, Marquise, Princess, Cushion, Emerald, Radiant, Heart etc.",
+        "From 0.01ct through 5.00ct & above.",
+        "D to Z Colors & Fancy Color diamonds in all measurements.",
+    ]
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-background">
+            {/* Hero Section */}
             <motion.section
-                className="py-16 bg-surface"
+                className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/30 to-background"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.h1
-                        className="text-5xl md:text-6xl font-serif font-bold mb-6"
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                    >
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4 sm:mb-6 text-balance leading-tight">
+                            Natural Diamonds
+                        </h1>
+                    </motion.div>
+
+                    <motion.p
+                        className="text-base sm:text-lg text-muted-foreground max-w-3xl mb-6 sm:mb-8 leading-relaxed"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        Natural Diamonds
-                    </motion.h1>
-                    <motion.p
-                        className="text-xl text-muted-foreground max-w-3xl"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                        Discover our collection of certified natural diamonds, each with its own unique story and unparalleled
-                        beauty.
+                        Natural diamonds are often hailed as one of nature's most exquisite and cherished creations. Formed deep
+                        within the Earth's mantle over millions of years, these gems captivate with their mesmerizing brilliance and
+                        enduring beauty. Composed solely of pure carbon atoms arranged in a crystalline lattice structure, diamonds
+                        are renowned for their remarkable hardness, making them the toughest naturally occurring substance known to
+                        humanity.
                     </motion.p>
                 </div>
             </motion.section>
 
-            <section className="py-20 bg-background">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.h2
-                        className="text-3xl font-serif font-bold mb-8"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        Featured Collection
-                    </motion.h2>
-
+            <motion.section
+                className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+            >
+                <div className="max-w-5xl mx-auto">
                     <motion.div
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-                        ref={cardsRef}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="rounded-lg overflow-hidden shadow-lg"
+                    >
+                        <img
+                            src="/natural_diamond_hero_image.png"
+                            alt="Natural diamonds - raw and polished"
+                            className="w-full h-auto object-cover"
+                        />
+                    </motion.div>
+                </div>
+            </motion.section>
+
+            {/* Manufacturing Process Section */}
+            <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-5xl mx-auto">
+                    <motion.div
+                        ref={processRef}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6 }}
+                        className="mb-12 sm:mb-16"
+                    >
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 sm:mb-4">
+                            Manufacturing Process of Natural Diamonds!
+                        </h2>
+                    </motion.div>
+
+                    {/* Process Steps */}
+                    <motion.div
+                        className="space-y-6 sm:space-y-8"
                         initial="hidden"
-                        animate={cardsInView ? "visible" : "hidden"}
+                        animate={processInView ? "visible" : "hidden"}
                         variants={containerVariants}
                     >
-                        {diamonds.map((diamond) => (
+                        {processSteps.map((step, index) => (
                             <motion.div
-                                key={diamond.id}
-                                className="bg-surface rounded-lg overflow-hidden hover:shadow-lg transition"
+                                key={index}
+                                className="bg-card rounded-lg p-4 sm:p-6 md:p-8 border border-border hover:shadow-lg transition-shadow"
                                 variants={itemVariants}
-                                whileHover={{ y: -8, transition: { duration: 0.3 } }}
                             >
-                                <motion.div
-                                    className="relative h-64 rounded-lg overflow-hidden"
-                                    whileHover={{ scale: 1.1 }}
-                                    transition={{ duration: 0.4 }}
-                                >
-                                    <Image
-                                        src={diamond.image || "/placeholder.svg"}
-                                        alt={diamond.name}
-                                        fill
-                                        className="object-cover"
-                                        priority
-                                    />
-                                </motion.div>
-                                <div className="p-6">
-                                    <h3 className="text-lg font-semibold mb-2">{diamond.name}</h3>
-                                    <div className="text-sm text-muted-foreground mb-3 space-y-1">
-                                        <p>Carat: {diamond.carat}</p>
-                                        <p>Color: {diamond.color}</p>
+                                <div className="flex gap-3 sm:gap-4">
+                                    <div className="flex-shrink-0">
+                                        <div className="flex items-center justify-center h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-primary text-primary-foreground font-semibold text-sm sm:text-base">
+                                            {index + 1}
+                                        </div>
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3">{step.title}</h3>
+                                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{step.description}</p>
                                     </div>
                                 </div>
                             </motion.div>
                         ))}
                     </motion.div>
+                </div>
+            </section>
 
+            {/* Our Offerings Section */}
+            <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
+                <div className="max-w-5xl mx-auto">
                     <motion.div
-                        className="bg-surface rounded-lg p-12"
-                        ref={benefitsRef}
+                        ref={offeringsRef}
                         initial={{ opacity: 0, y: 20 }}
-                        animate={benefitsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        animate={offeringsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h3 className="text-2xl font-serif font-bold mb-4">Why Natural Diamonds?</h3>
-                        <motion.ul
-                            className="space-y-3 text-muted-foreground"
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-8 sm:mb-12">
+                            Our offerings are as follows:
+                        </h2>
+
+                        <motion.div
+                            className="space-y-4 sm:space-y-5"
                             initial="hidden"
-                            animate={benefitsInView ? "visible" : "hidden"}
+                            animate={offeringsInView ? "visible" : "hidden"}
                             variants={containerVariants}
                         >
-                            <motion.li className="flex gap-3" variants={itemVariants}>
-                                <span className="text-accent">◆</span>
-                                <span>Formed over billions of years, each natural diamond carries its own unique characteristics</span>
-                            </motion.li>
-                            <motion.li className="flex gap-3" variants={itemVariants}>
-                                <span className="text-accent">◆</span>
-                                <span>Exceptional rarity and value that appreciate over time</span>
-                            </motion.li>
-                            <motion.li className="flex gap-3" variants={itemVariants}>
-                                <span className="text-accent">◆</span>
-                                <span>Certified by leading gemological institutes for complete transparency</span>
-                            </motion.li>
-                            <motion.li className="flex gap-3" variants={itemVariants}>
-                                <span className="text-accent">◆</span>
-                                <span>Traditional choice for engagement and special occasions</span>
-                            </motion.li>
-                        </motion.ul>
+                            {offerings.map((offering, index) => (
+                                <motion.div key={index} className="flex gap-3 sm:gap-4 items-start" variants={itemVariants}>
+                                    <div className="flex-shrink-0 mt-1">
+                                        <div className="flex items-center justify-center h-5 w-5 sm:h-6 sm:w-6">
+                                            <span className="text-primary text-lg sm:text-xl">◇</span>
+                                        </div>
+                                    </div>
+                                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{offering}</p>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </motion.div>
+
+                    {/* CTA Section */}
+                    <motion.div
+                        className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-border"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={offeringsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                        <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">If not done yet,</p>
+                        <motion.a
+                            href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-10 py-4 bg-accent text-white font-semibold hover:bg-accent-dark transition"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Get Quote Now
+                        </motion.a>
                     </motion.div>
                 </div>
             </section>

@@ -1,8 +1,8 @@
 "use client"
 
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import Link from "next/link"
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -16,170 +16,134 @@ const containerVariants = {
 }
 
 const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
-        scale: 1,
-        transition: { duration: 0.5, ease: "easeOut" },
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" },
     },
 }
 
 export default function DiamondJewelry() {
-    const jewelry = [
-        {
-            id: 1,
-            name: "Solitaire Engagement Ring",
-            metal: "Platinum",
-            price: "$6,500",
-            image: "/jewelry/solitaire_engagement_ring.png",
-        },
-        {
-            id: 2,
-            name: "Diamond Stud Earrings",
-            metal: "14K White Gold",
-            price: "$3,200",
-            image: "/jewelry/diamond_stud_earrings.png",
-        },
-        { id: 3, name: "Tennis Bracelet", metal: "18K White Gold", price: "$8,900", image: "/jewelry/tennis_bracelet.png" },
-        {
-            id: 4,
-            name: "Diamond Pendant Necklace",
-            metal: "Platinum",
-            price: "$4,800",
-            image: "/jewelry/diamond_pendant_necklace.png",
-        },
-        {
-            id: 5,
-            name: "Three-Stone Ring",
-            metal: "14K Yellow Gold",
-            price: "$7,200",
-            image: "/jewelry/three_stone_ring.png",
-        },
-        {
-            id: 6,
-            name: "Diamond Halo Ring",
-            metal: "18K White Gold",
-            price: "$5,600",
-            image: "/jewelry/diamond_halo_ring.png",
-        },
+    const { ref: offeringsRef, inView: offeringsInView } = useInView({ threshold: 0.2, triggerOnce: true })
+
+    const offerings = [
+        "Engagement Rings, Earrings, Necklaces, Tennis Bracelets, Studs, and more.",
+        "Natural Diamonds & Lab Grown Diamond Jewelry",
+        "In all Precious Metals like Gold, Silver, Platinum.",
     ]
 
-    const { ref: cardsRef, inView: cardsInView } = useInView({ threshold: 0.1, triggerOnce: true })
-    const { ref: customRef, inView: customInView } = useInView({ threshold: 0.2, triggerOnce: true })
-
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-background">
+            {/* Hero Section */}
             <motion.section
-                className="py-16 bg-surface"
+                className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/30 to-background"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.h1
-                        className="text-5xl md:text-6xl font-serif font-bold mb-6"
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                    >
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4 sm:mb-6 text-balance leading-tight">
+                            Diamond Jewelry
+                        </h1>
+                    </motion.div>
+
+                    <motion.p
+                        className="text-base sm:text-lg text-muted-foreground max-w-3xl mb-6 sm:mb-8 leading-relaxed"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        Diamond Jewelry
-                    </motion.h1>
-                    <motion.p
-                        className="text-xl text-muted-foreground max-w-3xl"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                        Exquisitely crafted jewelry pieces featuring our finest diamonds, designed to celebrate life's most precious
-                        moments.
+                        Diamond jewelry is renowned for its timeless appeal and enduring beauty & Luxury. Regardless of fashion
+                        trends or changing styles, diamonds remain a symbol of sophistication and refinement, making them suitable
+                        for any occasion or outfit.
                     </motion.p>
                 </div>
             </motion.section>
 
-            <section className="py-20 bg-background">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.h2
-                        className="text-3xl font-serif font-bold mb-8"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        Signature Collection
-                    </motion.h2>
-
+            <motion.section
+                className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+            >
+                <div className="max-w-5xl mx-auto">
                     <motion.div
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                        ref={cardsRef}
-                        initial="hidden"
-                        animate={cardsInView ? "visible" : "hidden"}
-                        variants={containerVariants}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="rounded-lg overflow-hidden shadow-lg bg-black"
                     >
-                        {jewelry.map((item) => (
-                            <motion.div
-                                key={item.id}
-                                className="group"
-                                variants={itemVariants}
-                                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                            >
-                                <motion.div
-                                    className="relative h-64 rounded-lg overflow-hidden"
-                                    whileHover={{ scale: 1.1 }}
-                                    transition={{ duration: 0.4 }}
-                                >
-                                    <Image
-                                        src={item.image || "/placeholder.svg"}
-                                        alt={item.name}
-                                        fill
-                                        className="object-cover"
-                                        priority
-                                    />
+                        <img
+                            src="/jewelry_hero_image.png"
+                            alt="Exquisite diamond jewelry necklace"
+                            className="w-full h-auto object-cover"
+                        />
+                    </motion.div>
+                </div>
+            </motion.section>
+
+            {/* Our Offerings Section */}
+            <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
+                <div className="max-w-5xl mx-auto">
+                    <motion.div
+                        ref={offeringsRef}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={offeringsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-8 sm:mb-12">
+                            Our Offerings are as follows:
+                        </h2>
+
+                        <motion.div
+                            className="space-y-4 sm:space-y-5"
+                            initial="hidden"
+                            animate={offeringsInView ? "visible" : "hidden"}
+                            variants={containerVariants}
+                        >
+                            {offerings.map((offering, index) => (
+                                <motion.div key={index} className="flex gap-3 sm:gap-4 items-start" variants={itemVariants}>
+                                    <div className="flex-shrink-0 mt-1">
+                                        <div className="flex items-center justify-center h-5 w-5 sm:h-6 sm:w-6">
+                                            <span className="text-primary text-lg sm:text-xl">◇</span>
+                                        </div>
+                                    </div>
+                                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{offering}</p>
                                 </motion.div>
-                                <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
-                                <p className="text-sm text-muted-foreground mb-3">Metal: {item.metal}</p>
-                            </motion.div>
-                        ))}
+                            ))}
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Additional Information */}
+                    <motion.div
+                        className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-border"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={offeringsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                            Ishanta Jewels presents premium custom jewelry to B2B customers across the globe as per their requirements
+                            & requests, please contact our representative for more information on it.
+                        </p>
+                        <motion.a
+                            href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-10 py-4 bg-accent text-white font-semibold hover:bg-accent-dark transition"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Start Your Custom Design
+                        </motion.a>
                     </motion.div>
                 </div>
             </section>
-
-            <motion.section
-                className="py-20 bg-surface"
-                ref={customRef}
-                initial={{ opacity: 0 }}
-                animate={customInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.6 }}
-            >
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <motion.h2
-                        className="text-4xl font-serif font-bold mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={customInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        Custom Design Service
-                    </motion.h2>
-                    <motion.p
-                        className="text-lg text-muted-foreground mb-8"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={customInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        Don't see what you're looking for? Our master craftspeople can create a bespoke piece tailored to your
-                        vision.
-                    </motion.p>
-                    <motion.a
-                        href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block px-10 py-4 bg-accent text-white font-semibold hover:bg-accent-dark transition"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        Start Your Custom Design
-                    </motion.a>
-                </div>
-            </motion.section>
         </div>
     )
 }
