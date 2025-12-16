@@ -62,7 +62,7 @@ export default function LabGrownDiamonds() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export default function LabGrownDiamonds() {
                         className="rounded-lg overflow-hidden shadow-lg"
                     >
                         <img
-                            src="/carat_wight.png"
+                            src="/lab_grown_hero_image.png"
                             alt="Lab-grown diamonds manufacturing process"
                             className="w-full h-auto object-cover"
                         />
