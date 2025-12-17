@@ -7,6 +7,7 @@ import WhatsappWidget from "../components/WhatsappWidget";
 import {Facebook, Instagram, Linkedin, MessagesSquare, Twitter, X} from "lucide-react"
 import { recoleta } from "./fonts";
 import Image from "next/image";
+import Pinterest from "../components/icons/Pinterest";
 
 export default function RootLayout({ children }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -272,6 +273,16 @@ export default function RootLayout({ children }) {
                                     aria-label="Follow us on X"
                                 >
                                     <Twitter size={24} />
+                                </a>
+
+                                <a
+                                    href="https://www.pinterest.com/Ishanta_Jewels/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-gray-300 transition-colors"
+                                    aria-label="Follow us on Pinterest"
+                                >
+                                    <Pinterest size={24} />
                                 </a>
                             </div>
                         </div>
