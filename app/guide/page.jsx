@@ -295,7 +295,7 @@ export default function Guide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        Ready to Find Your Perfect Diamond?
+                        Ready to Find Your Perfect Deal?
                     </motion.h2>
                     <motion.p
                         className="text-base md:text-lg text-muted-foreground mb-10"
@@ -313,20 +313,16 @@ export default function Guide() {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         viewport={{ once: true }}
                     >
-                        <motion.button
-                            className="px-6 md:px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition"
+                        <motion.a
+                            href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-10 py-4 bg-accent rounded-lg text-white font-semibold hover:bg-accent-dark transition"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Shop Diamonds
-                        </motion.button>
-                        <motion.button
-                            className="px-6 md:px-8 py-3 border-2 border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Schedule Consultation
-                        </motion.button>
+                            Get Quote Now
+                        </motion.a>
                     </motion.div>
                 </div>
             </motion.section>

@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import TypingText from "@/components/TypingText";
+import { Gem  } from "lucide-react"
 
 export default function Home() {
     const whyChooseRef = useRef(null)
@@ -13,6 +14,24 @@ export default function Home() {
 
     const collectionsRef = useRef(null)
     const isCollectionsInView = useInView(collectionsRef, { once: true, amount: 0.2 })
+
+    const features = [
+        {
+            title: "QUALITY",
+            description:
+                "Our Each diamond and Jewelry are gone through several QC checks by our experts to enhance the customer experience, we deliver same product what we offer to create the transparency. Our each certified diamonds are certified by reputed Diamond Grading Laboratories in the industry like GIA (Gemological Institute of America), IGI (International Gemological Institute) and even company's non certs goods are graded as the standard parameters of the GIA & IGI.",
+        },
+        {
+            title: "TRUST",
+            description:
+                "Our company has established trust of thousands of our happy customers across the globe as we prioritize your trust above everything else, we promise to provide transparency to each transaction done. Join the thousands of satisfied customers, and experience the Brilliance of Ishanta Jewels. Your security and peace of mind are our top priorities.",
+        },
+        {
+            title: "CONSISTENCY",
+            description:
+                "At Ishanta Jewels, we are deeply committed to ensuring uninterrupted supply to our valued customers. We understand the critical importance of reliability and consistency in today's dynamic business landscape. That's why we have dedicated ourselves to meticulously planning and executing every aspect of our supply chain.",
+        },
+    ]
 
     const heroTitleVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -125,8 +144,8 @@ export default function Home() {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                         {[
-                            { icon: "✓", title: "IGI_GIA Certified Diamonds", desc: "All diamonds certified by reputed international certification labs" },
-                            { icon: "🛡️", title: "Conflict-Free", desc: "100% ethically sourced diamonds" },
+                            { icon: "✓", title: "IGI & GIA Certified Diamonds", desc: "All diamonds certified by reputed international certification labs" },
+                            { icon: "🛡️", title: "Conflict-Free", desc: "100% ethically crafted diamonds" },
                             { icon: "🏆", title: "15+ Years", desc: "Industry expertise and excellence" },
                             { icon: "💎", title: "ISO 9001", desc: "International quality standards" },
                         ].map((badge, i) => (
@@ -204,8 +223,8 @@ export default function Home() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Collections</h2>
-                        <p className="text-lg text-muted-foreground">Explore our handpicked selection of premium diamonds</p>
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Products</h2>
+                        <p className="text-lg text-muted-foreground">Explore the finely crafted premium diamond jewelry and Ishanta's handpicked exclusive quality diamonds</p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -290,51 +309,42 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Why Choose Us */}
-            <section className="py-20 bg-surface" ref={whyChooseRef}>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.h2
-                        className="text-4xl md:text-5xl font-serif font-bold text-center mb-16"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isWhyChooseInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        Why Choose Ishanta
-                    </motion.h2>
+            <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
+                <div className="max-w-7xl mx-auto">
+                    {/* Section Header */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 inline-block">
+                            WHY CHOOSE{" "}
+                            <span className="relative">
+              US
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-gray-900"></span>
+            </span>
+                        </h2>
+                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        {[
-                            {
-                                title: "Certified Quality",
-                                desc: "Every diamond comes with certifications from leading gemological institutes, guaranteeing authenticity and quality.",
-                            },
-                            {
-                                title: "Ethical Sourcing",
-                                desc: "We're committed to responsible practices, ensuring all diamonds are ethically sourced and conflict-free.",
-                            },
-                            {
-                                title: "Expert Craftsmanship",
-                                desc: "Our master artisans create bespoke pieces tailored to your unique vision and preferences.",
-                            },
-                            {
-                                title: "Lifetime Support",
-                                desc: "We stand behind our jewelry with lifetime maintenance, cleaning, and personalized customer service.",
-                            },
-                        ].map((feature, i) => (
-                            <motion.div
-                                key={i}
-                                className="flex gap-4"
-                                variants={featureVariants}
-                                initial="hidden"
-                                animate={isWhyChooseInView ? "visible" : "hidden"}
-                                custom={i}
+                    {/* Feature Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                        {features.map((feature, index) => (
+                            <div
+                                key={index}
+                                className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
                             >
-                                <div className="text-accent text-3xl flex-shrink-0">◆</div>
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                                    <p className="text-muted-foreground">{feature.desc}</p>
+                                {/* Icon */}
+                                <div className="flex justify-center mb-6">
+                                    <div className="relative">
+                                        <div className="absolute inset-0 bg-blue-100 rounded-full blur-lg opacity-50"></div>
+                                        <div className="relative bg-blue-50 rounded-full p-6">
+                                            <Gem className="w-12 h-12 text-blue-600 fill-blue-200" strokeWidth={1.5} />
+                                        </div>
+                                    </div>
                                 </div>
-                            </motion.div>
+
+                                {/* Title */}
+                                <h3 className="text-xl font-semibold text-center mb-4 tracking-wide">{feature.title}</h3>
+
+                                {/* Description */}
+                                <p className="text-gray-700 text-center leading-relaxed text-sm">{feature.description}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -352,7 +362,7 @@ export default function Home() {
                     >
                         <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Ready to Find Your Perfect Diamond?</h2>
                         <p className="text-lg text-muted-foreground">
-                            Let our experts help you discover a diamond as unique as your love story.
+                            Let our experts help you discover a diamond or a jewelry as unique as you.
                         </p>
                     </motion.div>
 

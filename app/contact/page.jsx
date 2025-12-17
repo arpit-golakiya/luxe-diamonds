@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { PhoneInput } from "react-international-phone"
 import "react-international-phone/style.css"
+import countries from "../../lib/data/countries.json"
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -156,9 +157,10 @@ export default function Contact() {
                                             className="w-full px-4 py-2 border border-border rounded-lg"
                                         >
                                             <option value="">Select Type</option>
-                                            <option value="Lab Grown (CVD)">Lab Grown (CVD)</option>
-                                            <option value="Lab Grown (HPHT)">Lab Grown (HPHT)</option>
-                                            <option value="Natural">Natural</option>
+                                            <option value="Lab Grown (CVD) Diamonds">Lab Grown (CVD) Diamonds</option>
+                                            <option value="Lab Grown (HPHT) Diamonds">Lab Grown (HPHT) Diamonds</option>
+                                            <option value="Natural Diamonds">Natural Diamonds</option>
+                                            <option value="Natural Diamonds Jewelry">Custom Jewelry</option>
                                         </select>
                                     </div>
 
@@ -172,11 +174,11 @@ export default function Contact() {
                                             className="w-full px-4 py-2 border border-border rounded-lg"
                                         >
                                             <option value="">Select Country</option>
-                                            <option value="United States">United States</option>
-                                            <option value="India">India</option>
-                                            <option value="Canada">Canada</option>
-                                            <option value="United Kingdom">United Kingdom</option>
-                                            <option value="Australia">Australia</option>
+                                            {countries.map((country) => (
+                                                <option key={country} value={country}>
+                                                    {country}
+                                                </option>
+                                            ))}
                                         </select>
                                     </div>
                                 </div>

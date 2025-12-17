@@ -7,7 +7,6 @@ const phrases = [
     { text: `MAXIMIZING THE BRILLIANCE`, highlight: "BRILLIANCE" },
     { text: `EXPERIENCE OF ULTRA LUXURY`, highlight: "LUXURY" },
     { text: `REFLECTING THE PROMISE`, highlight: "PROMISE" },
-    { text: `UNLOCKING JOURNEYS WITH INSPIRING TRAVEL`, highlight: "INSPIRING TRAVEL" },
 ]
 
 export default function TypingText() {

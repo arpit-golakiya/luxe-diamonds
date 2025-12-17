@@ -62,19 +62,19 @@ export default function LabGrownDiamonds() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-7xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4 sm:mb-6 text-balance leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4 sm:mb-6 text-balance text-center leading-tight">
                             Lab-Grown Diamonds
                         </h1>
                     </motion.div>
 
                     <motion.p
-                        className="text-base sm:text-lg text-muted-foreground max-w-3xl mb-6 sm:mb-8 leading-relaxed"
+                        className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed text-center w-full"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -89,7 +89,7 @@ export default function LabGrownDiamonds() {
             </motion.section>
 
             <motion.section
-                className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8"
+                className="pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}

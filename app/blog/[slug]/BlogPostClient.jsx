@@ -212,7 +212,7 @@ export default function BlogPostClient({ slug }) {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        Ready to Find Your Perfect Diamond?
+                        Ready to Find Your Perfect Deal?
                     </motion.h2>
                     <motion.p
                         className="text-lg text-muted-foreground mb-10"

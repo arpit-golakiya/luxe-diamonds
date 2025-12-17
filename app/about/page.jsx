@@ -28,6 +28,8 @@ export default function About() {
     const { ref: storyRef, inView: storyInView } = useInView({ threshold: 0.2, triggerOnce: true })
     const { ref: valuesRef, inView: valuesInView } = useInView({ threshold: 0.2, triggerOnce: true })
     const { ref: expertiseRef, inView: expertiseInView } = useInView({ threshold: 0.2, triggerOnce: true })
+    const [craftsmanshipRef, craftsmanshipInView] = useInView({ triggerOnce: true, threshold: 0.1 })
+    const [promiseRef, promiseInView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
     return (
         <div className="min-h-screen">
@@ -52,8 +54,7 @@ export default function About() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        A distinguished manufacturer and wholesaler specializing in premium custom diamond jewelry and an extensive
-                        portfolio of finely crafted diamonds in all shapes and sizes.
+                        Crafting timeless elegance through premium diamonds and exceptional jewelry.
                     </motion.p>
                 </div>
             </motion.section>
@@ -74,17 +75,23 @@ export default function About() {
                         >
                             <h2 className="text-3xl font-serif font-bold mb-6">Our Story</h2>
                             <p className="text-lg text-muted-foreground mb-4">
-                                Ishanta Jewels Pvt. Ltd. is a distinguished manufacturer and wholesaler specializing in premium custom diamond jewelry and an extensive portfolio of finely crafted diamonds in all shapes and sizes.
+                                Ishanta Jewels Pvt. Ltd. is a distinguished manufacturer and wholesaler specializing in premium custom
+                                diamond jewelry and an extensive portfolio of finely crafted diamonds in all shapes and sizes.
                             </p>
                             <p className="text-lg text-muted-foreground mb-4">
-                                Founded in 2010 by visionary entrepreneurs, Ishanta Jewels was established with a singular philosophy: to deliver exquisite craftsmanship with exceptional efficiency. Built on precision, trust, and refined artistry, the brand has evolved into a respected global partner for B2B clients, offering both certified and non-certified diamonds, alongside exclusive designer diamond jewelry.
+                                Founded in 2010 by visionary entrepreneurs, Ishanta Jewels was established with a singular philosophy:
+                                to deliver exquisite craftsmanship with exceptional efficiency. Built on precision, trust, and refined
+                                artistry, the brand has evolved into a respected global partner for B2B clients, offering both certified
+                                and non-certified diamonds, alongside exclusive designer diamond jewelry.
                             </p>
                             <p className="text-lg text-muted-foreground">
-                                With a dedicated international sales team, Ishanta Jewels ensures responsive service and seamless coordination, enabling clients worldwide to experience reliability and consistency at every stage of engagement.
+                                With a dedicated international sales team, Ishanta Jewels ensures responsive service and seamless
+                                coordination, enabling clients worldwide to experience reliability and consistency at every stage of
+                                engagement.
                             </p>
                         </motion.div>
                         <motion.div
-                            className="relative h-120 rounded-lg overflow-hidden"
+                            className="relative h-[400px] rounded-lg overflow-hidden"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={storyInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
@@ -99,19 +106,47 @@ export default function About() {
             <section className="py-20 bg-surface">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
-                        className="max-w-3xl mx-auto text-center"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-12"
+                        ref={craftsmanshipRef}
+                        initial={{ opacity: 0 }}
+                        animate={craftsmanshipInView ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl font-serif font-bold mb-6">Craftsmanship & Manufacturing Excellence</h2>
-                        <p className="text-lg text-muted-foreground mb-4">
-                            Ishanta Jewels operates a state-of-the-art in-house manufacturing facility for loose diamonds and fine diamond jewelry in Surat, the diamond capital of the world. This integrated infrastructure allows us to maintain uncompromising quality standards while offering competitive pricing—delivering superior value that distinguishes us among leading suppliers from India and across global markets.
-                        </p>
-                        <p className="text-lg text-muted-foreground">
-                            Each creation reflects a harmonious blend of advanced technology, master craftsmanship, and meticulous attention to detail.
-                        </p>
+                        {/* Image on the left */}
+                        <motion.div
+                            className="relative h-[400px] rounded-lg overflow-hidden order-2 md:order-1"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={craftsmanshipInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            whileHover={{ scale: 1.05 }}
+                        >
+                            <Image
+                                src="/craftsmanship.png"
+                                alt="Craftsmanship - Diamond setting with precision tools"
+                                fill
+                                className="object-cover"
+                            />
+                        </motion.div>
+
+                        {/* Text content on the right */}
+                        <motion.div
+                            className="order-1 md:order-2"
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={craftsmanshipInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                        >
+                            <h2 className="text-3xl font-serif font-bold mb-6">Craftsmanship & Manufacturing Excellence</h2>
+                            <p className="text-lg text-muted-foreground mb-4">
+                                Ishanta Jewels operates a state-of-the-art in-house manufacturing facility for loose diamonds and fine
+                                diamond jewelry in Surat, the diamond capital of the world. This integrated infrastructure allows us to
+                                maintain uncompromising quality standards while offering competitive pricing—delivering superior value
+                                that distinguishes us among leading suppliers from India and across global markets.
+                            </p>
+                            <p className="text-lg text-muted-foreground">
+                                Each creation reflects a harmonious blend of advanced technology, master craftsmanship, and meticulous
+                                attention to detail.
+                            </p>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
@@ -119,19 +154,40 @@ export default function About() {
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
-                        className="max-w-3xl mx-auto text-center"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-12"
+                        ref={promiseRef}
+                        initial={{ opacity: 0 }}
+                        animate={promiseInView ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl font-serif font-bold mb-6">Our Promise</h2>
-                        <p className="text-lg text-muted-foreground">
-                            At Ishanta Jewels, our clients are more than partners—they are an extension of our legacy. Ethical business practices, transparency, and integrity form the foundation of every relationship we build. Every order undergoes rigorous quality assurance, ensuring that each piece meets the highest standards of excellence.
-                        </p>
-                        <p className="text-lg text-muted-foreground">
-                            Choosing Ishanta Jewels is a commitment to refined quality, trust, and enduring value.
-                        </p>
+                        {/* Text content on the left */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={promiseInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                            <h2 className="text-3xl font-serif font-bold mb-6">Our Promise</h2>
+                            <p className="text-lg text-muted-foreground mb-4">
+                                At Ishanta Jewels, our clients are more than partners—they are an extension of our legacy. Ethical
+                                business practices, transparency, and integrity form the foundation of every relationship we build.
+                                Every order undergoes rigorous quality assurance, ensuring that each piece meets the highest standards
+                                of excellence.
+                            </p>
+                            <p className="text-lg text-muted-foreground">
+                                Choosing Ishanta Jewels is a commitment to refined quality, trust, and enduring value.
+                            </p>
+                        </motion.div>
+
+                        {/* Image on the right */}
+                        <motion.div
+                            className="relative h-[400px] rounded-lg overflow-hidden"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={promiseInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            whileHover={{ scale: 1.05 }}
+                        >
+                            <Image src="/our_promise.png" alt="Our Promise - Quality craftsmanship" fill className="object-cover" />
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
