@@ -4,8 +4,9 @@ import { useState } from "react"
 import Link from "next/link"
 import "./globals.css"
 import WhatsappWidget from "../components/WhatsappWidget";
-import { Facebook, Instagram, Linkedin, MessagesSquare } from "lucide-react"
+import {Facebook, Instagram, Linkedin, MessagesSquare, Twitter, X} from "lucide-react"
 import { recoleta } from "./fonts";
+import Image from "next/image";
 
 export default function RootLayout({ children }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -230,41 +231,66 @@ export default function RootLayout({ children }) {
                     </div>
                 </div>
 
-                <div className="border-t border-border pt-8 mb-8">
-                    <h4 className="font-semibold mb-4 text-white">Follow Us</h4>
-                    <div className="flex gap-6">
-                        <a
-                            href="https://www.instagram.com/ishanta_jewels_pvt_ltd"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground text-white transition-colors"
-                            aria-label="Follow us on Instagram"
-                        >
-                            <Instagram size={24}/>
-                        </a>
-                        <a
-                            href="https://www.facebook.com/profile.php?id=61558748786353"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground text-white transition-colors"
-                            aria-label="Follow us on Facebook"
-                        >
-                            <Facebook size={24}/>
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/company/ishanta-jewels"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground text-white transition-colors"
-                            aria-label="Follow us on LinkedIn"
-                        >
-                            <Linkedin size={24}/>
-                        </a>
+                <div className="border-t border-white/20 pt-8 mb-8">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                        {/* Follow Us Section - Left */}
+                        <div>
+                            <h4 className="font-semibold mb-4 text-white">Follow Us</h4>
+                            <div className="flex gap-6">
+                                <a
+                                    href="https://www.instagram.com/ishanta_jewels_pvt_ltd"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-gray-300 transition-colors"
+                                    aria-label="Follow us on Instagram"
+                                >
+                                    <Instagram size={24} />
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/profile.php?id=61558748786353"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-gray-300 transition-colors"
+                                    aria-label="Follow us on Facebook"
+                                >
+                                    <Facebook size={24} />
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/company/ishanta-jewels"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-gray-300 transition-colors"
+                                    aria-label="Follow us on LinkedIn"
+                                >
+                                    <Linkedin size={24} />
+                                </a>
+                                <a
+                                    href="https://x.com/Ishanta_jewels"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-gray-300 transition-colors"
+                                    aria-label="Follow us on X"
+                                >
+                                    <Twitter size={24} />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="text-center md:text-right">
+                            <h4 className="font-semibold mb-4 text-white">Certified by</h4>
+                            <Image
+                                src="/logo-igi-gia-inverse.png"
+                                alt="IGI - International Gemological Institute"
+                                width={60}
+                                height={20}
+                                className="mx-auto md:mx-0 md:ml-auto"
+                            />
+                        </div>
                     </div>
                 </div>
 
                 <div className="border-t border-border pt-8 text-center text-sm text-white">
-                    <p>&copy; 2025 Ishanta Jewels. All rights reserved.</p>
+                    <p>&copy; 2025 Ishanta Jewels Pvt. Ltd. All rights reserved.</p>
                 </div>
             </div>
         </footer>
