@@ -7,6 +7,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import TypingText from "@/components/TypingText";
 import { Gem  } from "lucide-react"
+import HeroWords from "../components/HeroWords";
 
 export default function Home() {
     const whyChooseRef = useRef(null)
@@ -107,7 +108,7 @@ export default function Home() {
                     variants={{visible: {transition: {staggerChildren: 0.2}}}}
                 >
                     <motion.div variants={heroTextVariants}>
-                        <TypingText/>
+                        <HeroWords />
                     </motion.div>
                     <motion.p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto"
                               variants={heroTextVariants}>

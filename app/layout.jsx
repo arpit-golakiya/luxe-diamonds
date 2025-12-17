@@ -29,25 +29,17 @@ export default function RootLayout({ children }) {
         <body className="bg-background text-foreground font-serif">
         {/* Navigation */}
         <nav className="fixed top-0 w-full z-50 bg-accent backdrop-blur">
-            {/* FULL WIDTH BAR */}
             <div className="h-20 px-4 sm:px-6 lg:px-18">
                 {/* MOBILE LAYOUT */}
                 <div className="flex items-center justify-between h-full md:hidden">
                     {/* Logo */}
                     <Link href="/" className="flex items-center">
-      <span className="text-2xl font-serif font-bold text-white">
-        Ishanta
-      </span>
-                        <span className="text-2xl font-serif text-white ml-1">
-        Jewels
-      </span>
+                        <span className="text-2xl font-serif font-bold text-white">Ishanta</span>
+                        <span className="text-2xl font-serif text-white ml-1">Jewels</span>
                     </Link>
 
                     {/* Hamburger */}
-                    <button
-                        onClick={toggleMenu}
-                        className="text-white text-2xl"
-                    >
+                    <button onClick={toggleMenu} className="text-white text-2xl">
                         ☰
                     </button>
                 </div>
@@ -56,26 +48,23 @@ export default function RootLayout({ children }) {
                 <div className="hidden md:grid grid-cols-[auto_1fr_auto] items-center h-full">
                     {/* Logo */}
                     <Link href="/" className="flex items-center md:pl-4 lg:pl-6">
-      <span className="text-2xl font-serif font-bold text-white">
-        Ishanta
-      </span>
-                        <span className="text-2xl font-serif text-white ml-1">
-        Jewels
-      </span>
+                        <span className="text-2xl font-serif font-bold text-white">Ishanta</span>
+                        <span className="text-2xl font-serif text-white ml-1">Jewels</span>
                     </Link>
 
-                    {/* Center Menu */}
                     <div className="flex justify-center">
                         <div className="flex items-center gap-8">
-                            <Link href="/" className="text-white">Home</Link>
-                            <Link href="/about" className="text-white">About us</Link>
+                            <Link href="/" className="text-white">
+                                Home
+                            </Link>
+                            <Link href="/about" className="text-white">
+                                About us
+                            </Link>
 
                             <div className="group relative">
                                 <button className="text-white">Our Products</button>
-                                <div
-                                    className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-                                    <Link href="/products/natural-diamonds"
-                                          className="block px-4 py-2 hover:bg-accent/10">
+                                <div className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+                                    <Link href="/products/natural-diamonds" className="block px-4 py-2 hover:bg-accent/10">
                                         Natural Diamonds
                                     </Link>
                                     <Link href="/products/lab-grown" className="block px-4 py-2 hover:bg-accent/10">
@@ -86,26 +75,31 @@ export default function RootLayout({ children }) {
                                     </Link>
                                 </div>
                             </div>
-
-                            <Link href="/guide" className="text-white">Diamond's 4C Guide</Link>
-                            <Link href="/blog" className="text-white">Blogs</Link>
-                            <Link href="/careers" className="text-white">Career</Link>
                         </div>
                     </div>
 
-                    {/* CTA */}
-                    <Link
-                        href="/contact"
-                        className="flex items-center gap-2 border-2 border-white text-white px-5 py-2 rounded-lg hover:bg-white hover:text-accent transition"
-                    >
-                        <MessagesSquare size={18}/>
-                        Get Quote
-                    </Link>
+                    <div className="flex items-center gap-6 md:pr-4 lg:pr-6">
+                        <Link href="/guide" className="text-white">
+                            Diamond's 4C Guide
+                        </Link>
+                        <Link href="/blog" className="text-white">
+                            Blogs
+                        </Link>
+                        <Link href="/careers" className="text-white">
+                            Career
+                        </Link>
+
+                        <Link
+                            href="/contact"
+                            className="flex items-center gap-2 border-2 border-white text-white px-5 py-2 rounded-lg hover:bg-white hover:text-accent transition"
+                        >
+                            <MessagesSquare size={18} />
+                            Get Quote
+                        </Link>
+                    </div>
                 </div>
             </div>
 
-
-            {/* MOBILE MENU */}
             {mobileMenuOpen && (
                 <div className="md:hidden px-6 pb-4 bg-accent">
                     <Link href="/" className="block text-white py-2 text-sm">
@@ -116,25 +110,14 @@ export default function RootLayout({ children }) {
                     </Link>
 
                     <div className="py-2">
-                        <p className="text-sm font-semibold mb-2 text-white">
-                            Our Products
-                        </p>
-                        <Link
-                            href="/products/natural-diamonds"
-                            className="block text-white pl-4 py-1 text-sm"
-                        >
+                        <p className="text-sm font-semibold mb-2 text-white">Our Products</p>
+                        <Link href="/products/natural-diamonds" className="block text-white pl-4 py-1 text-sm">
                             Natural Diamonds
                         </Link>
-                        <Link
-                            href="/products/lab-grown"
-                            className="block text-white pl-4 py-1 text-sm"
-                        >
+                        <Link href="/products/lab-grown" className="block text-white pl-4 py-1 text-sm">
                             Lab-Grown Diamonds
                         </Link>
-                        <Link
-                            href="/products/jewelry"
-                            className="block text-white pl-4 py-1 text-sm"
-                        >
+                        <Link href="/products/jewelry" className="block text-white pl-4 py-1 text-sm">
                             Diamond Jewelry
                         </Link>
                     </div>
@@ -153,7 +136,7 @@ export default function RootLayout({ children }) {
                         href="/contact"
                         className="inline-flex items-center gap-2 mt-3 border-2 border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-accent transition-all duration-300"
                     >
-                        <MessagesSquare size={16}/>
+                        <MessagesSquare size={16} />
                         Get Quote
                     </Link>
                 </div>
