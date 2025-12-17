@@ -73,7 +73,7 @@ export default function Home() {
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 {/* Video Background */}
                 <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-                    <source src="/home-page-video.mp4" type="video/mp4"/>
+                    <source src="/hero_page_video.mp4" type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
 
