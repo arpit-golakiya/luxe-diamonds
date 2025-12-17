@@ -222,6 +222,62 @@ export default function Contact() {
                     </div>
                 </div>
             </section>
+
+            {/* Map & Office Location Section */}
+            <section className="py-20 bg-accent">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                    {/* 12 column grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                        {/* Office Details */}
+                        <div className="lg:col-span-4">
+                            <h2 className="text-3xl font-serif font-bold mb-6 text-white">
+                                Our Office
+                            </h2>
+
+                            <div className="space-y-6 text-white">
+
+                                <div>
+                                    <h3 className="font-semibold mb-1">Address</h3>
+                                    <p>
+                                        Vyas Compound, 201, ASHRAM CHAR RATSA,<br />
+                                        Beside AMAR ELECTRONICS,<br />
+                                        Bambavadi, Tunki, Katargam,<br />
+                                        Surat, Gujarat 395004
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3 className="font-semibold mb-1">Phone</h3>
+                                    <a
+                                        href="tel:+918487818980"
+                                        className="hover:underline"
+                                    >
+                                        +91 84878 18980
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {/* Map */}
+                        <div className="lg:col-span-8">
+                            <div className="w-full h-[420px] rounded-xl overflow-hidden border border-white/20">
+                                <iframe
+                                    title="Ishanta Jewels Location"
+                                    src="https://www.google.com/maps?q=Ishanta+Jewels,+Katargam,+Surat&ll=21.2188265,72.8326378&z=9&output=embed"
+                                    className="w-full h-full"
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
         </div>
     )
 }
