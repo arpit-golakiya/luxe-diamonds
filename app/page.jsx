@@ -6,8 +6,9 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import TypingText from "@/components/TypingText";
-import { Gem  } from "lucide-react"
+import { Gem, MessageCircle  } from "lucide-react"
 import HeroWords from "../components/HeroWords";
+import WhatsAppIcon from "../components/icons/WhatsAppIcon";
 
 export default function Home() {
     const whyChooseRef = useRef(null)
@@ -367,7 +368,9 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                         {/* Phone Card */}
                         <motion.a
-                            href="tel:+918487818980"
+                            href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group bg-white border-2 border-gray-100 rounded-lg p-8 text-center hover:border-accent hover:shadow-lg transition duration-300"
                             custom={0}
                             variants={contactCardVariants}
@@ -377,12 +380,14 @@ export default function Home() {
                             viewport={{ once: true }}
                         >
                             <motion.div
-                                className="text-accent text-5xl mb-4 group-hover:scale-110 transition duration-300"
+                                className="text-green-500 text-5xl mb-4 flex justify-center group-hover:scale-110 transition duration-300"
                                 whileHover={{ scale: 1.2, rotate: 5 }}
                             >
-                                ☎
+                                <WhatsAppIcon />
                             </motion.div>
-                            <p className="text-gray-600 text-sm mb-2">Call or Whatsapp us</p>
+
+                            <p className="text-gray-600 text-sm mb-2">Chat with us on WhatsApp</p>
+
                             <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition">
                                 +91 84878 18980
                             </h3>

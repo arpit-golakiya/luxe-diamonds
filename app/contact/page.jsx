@@ -4,6 +4,7 @@ import { useState } from "react"
 import { PhoneInput } from "react-international-phone"
 import "react-international-phone/style.css"
 import countries from "../../lib/data/countries.json"
+import WhatsAppIcon from "../../components/icons/WhatsAppIcon";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -80,8 +81,9 @@ export default function Contact() {
 
                                 <div>
                                     <h3 className="font-semibold mb-2">Phone</h3>
-                                    <p className="text-muted-foreground">
-                                        <a href="tel:+918487818980" className="hover:text-accent">
+                                    <p className="text-muted-foreground flex items-center gap-2">
+                                        <WhatsAppIcon size={16} className="text-accent" />
+                                        <a target="_blank" href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more" className="hover:text-accent transition">
                                             +91 84878 18980
                                         </a>
                                     </p>
@@ -249,13 +251,13 @@ export default function Contact() {
                                 </div>
 
                                 <div>
-                                    <h3 className="font-semibold mb-1">Phone</h3>
-                                    <a
-                                        href="tel:+918487818980"
-                                        className="hover:underline"
-                                    >
-                                        +91 84878 18980
-                                    </a>
+                                    <h3 className="font-semibold mb-2">Phone</h3>
+                                    <p className="flex items-center gap-2">
+                                        <WhatsAppIcon size={16} className="text-accent" />
+                                        <a target="_blank" href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more" className="transition">
+                                            +91 84878 18980
+                                        </a>
+                                    </p>
                                 </div>
 
                             </div>
