@@ -382,7 +382,7 @@ export default function Home() {
                             >
                                 ☎
                             </motion.div>
-                            <p className="text-gray-600 text-sm mb-2">Call us</p>
+                            <p className="text-gray-600 text-sm mb-2">Call or Whatsapp us</p>
                             <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition">
                                 +91 84878 18980
                             </h3>

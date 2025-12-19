@@ -75,6 +75,7 @@ export default function RootLayout({ children }) {
                         <Link href="/guide" className="text-white">Diamond's 4C Guide</Link>
                         <Link href="/blog" className="text-white">Blogs</Link>
                         <Link href="/careers" className="text-white">Career</Link>
+                        <Link href="/contact" className="text-white">Contact us</Link>
 
                         <Link
                             href="/contact"
@@ -117,6 +118,9 @@ export default function RootLayout({ children }) {
                     </Link>
                     <Link href="/careers" className="block text-white py-2 text-sm">
                         Career
+                    </Link>
+                    <Link href="/contact" className="block text-white py-2 text-sm">
+                        Contact us
                     </Link>
 
                     <Link
