@@ -34,30 +34,51 @@ export default function About() {
     return (
         <div className="min-h-screen">
             <motion.section
-                className="py-20 bg-surface"
+                className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.h1
-                        className="text-5xl md:text-6xl font-serif font-bold mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        Ishanta Jewels
-                    </motion.h1>
-                    <motion.p
-                        className="text-xl text-muted-foreground max-w-3xl"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                        Crafting timeless elegance through premium diamonds and exceptional jewelry.
-                    </motion.p>
+                <Image
+                    src="/about_us_hero.jpeg"
+                    alt="Premium Diamonds by Ishanta Jewels"
+                    fill
+                    priority
+                    className="object-cover"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/50" />
+
+                {/* Content */}
+                <div className="relative z-10 h-full">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+                        <div className="flex h-full items-start pt-20 md:pt-28">
+                            <motion.div
+                                initial={{ y: 30, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.7, delay: 0.2 }}
+                            >
+                                <motion.h1
+                                    className="text-4xl md:text-6xl font-serif font-bold text-white mb-4"
+                                >
+                                    Ishanta Jewels
+                                </motion.h1>
+
+                                <motion.p
+                                    className="text-lg md:text-2xl text-gray-200 max-w-2xl"
+                                    initial={{ y: 20, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ duration: 0.7, delay: 0.4 }}
+                                >
+                                    Crafting timeless elegance through premium diamonds and exceptional jewelry.
+                                </motion.p>
+                            </motion.div>
+                        </div>
+                    </div>
                 </div>
             </motion.section>
+
 
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,13 +112,13 @@ export default function About() {
                             </p>
                         </motion.div>
                         <motion.div
-                            className="relative h-[400px] rounded-lg overflow-hidden"
+                            className="relative h-[600px] rounded-lg overflow-hidden"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={storyInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                             whileHover={{ scale: 1.05 }}
                         >
-                            <Image src="/about_us.png" alt="Ishanta Jewels" fill className="object-cover" priority />
+                            <Image src="/about_us.jpg" alt="Ishanta Jewels" fill className="object-cover" priority />
                         </motion.div>
                     </motion.div>
                 </div>
