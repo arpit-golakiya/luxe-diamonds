@@ -108,7 +108,7 @@ export default function Home() {
                     variants={{visible: {transition: {staggerChildren: 0.2}}}}
                 >
                     <motion.div variants={heroTextVariants}>
-                        <HeroWords />
+                        <TypingText />
                     </motion.div>
                     <motion.p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto"
                               variants={heroTextVariants}>
@@ -225,7 +225,7 @@ export default function Home() {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Products</h2>
-                        <p className="text-lg text-muted-foreground">Explore the finely crafted premium diamond jewelry and Ishanta's handpicked exclusive quality diamonds</p>
+                        <p className="text-lg text-muted-foreground">Explore the finely crafted premium diamond jewelry and Ishanta's handcrafted exclusive quality diamonds</p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -315,11 +315,7 @@ export default function Home() {
                     {/* Section Header */}
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 inline-block">
-                            WHY CHOOSE{" "}
-                            <span className="relative">
-              US
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gray-900"></span>
-            </span>
+                            Why Choose Us
                         </h2>
                     </div>
 
@@ -361,7 +357,7 @@ export default function Home() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Ready to Find Your Perfect Diamond?</h2>
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Ready to Find Your Perfect Deal?</h2>
                         <p className="text-lg text-muted-foreground">
                             Let our experts help you discover a diamond or a jewelry as unique as you.
                         </p>

@@ -42,7 +42,7 @@ export default function Blog() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        Diamond Insights
+                        Latest Insights
                     </motion.h1>
                     <motion.p
                         className="text-xl text-muted-foreground max-w-3xl"
@@ -110,54 +110,54 @@ export default function Blog() {
             </section>
 
             {/* Newsletter Section */}
-            <motion.section
-                className="py-20 bg-surface"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <motion.h2
-                        className="text-4xl font-serif font-bold mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        Stay Updated
-                    </motion.h2>
-                    <motion.p
-                        className="text-lg text-muted-foreground mb-8"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        viewport={{ once: true }}
-                    >
-                        Subscribe to our newsletter for the latest diamond insights, care tips, and exclusive jewelry updates.
-                    </motion.p>
-                    <motion.div
-                        className="flex gap-3 max-w-md mx-auto"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        viewport={{ once: true }}
-                    >
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="flex-1 px-4 py-3 border border-border rounded-lg bg-background"
-                        />
-                        <motion.button
-                            className="px-8 py-3 bg-accent text-white font-semibold hover:bg-accent-dark transition rounded-lg"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Subscribe
-                        </motion.button>
-                    </motion.div>
-                </div>
-            </motion.section>
+            {/*<motion.section*/}
+            {/*    className="py-20 bg-surface"*/}
+            {/*    initial={{ opacity: 0 }}*/}
+            {/*    whileInView={{ opacity: 1 }}*/}
+            {/*    transition={{ duration: 0.6 }}*/}
+            {/*    viewport={{ once: true }}*/}
+            {/*>*/}
+            {/*    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">*/}
+            {/*        <motion.h2*/}
+            {/*            className="text-4xl font-serif font-bold mb-6"*/}
+            {/*            initial={{ opacity: 0, y: 20 }}*/}
+            {/*            whileInView={{ opacity: 1, y: 0 }}*/}
+            {/*            transition={{ duration: 0.6 }}*/}
+            {/*            viewport={{ once: true }}*/}
+            {/*        >*/}
+            {/*            Stay Updated*/}
+            {/*        </motion.h2>*/}
+            {/*        <motion.p*/}
+            {/*            className="text-lg text-muted-foreground mb-8"*/}
+            {/*            initial={{ opacity: 0, y: 20 }}*/}
+            {/*            whileInView={{ opacity: 1, y: 0 }}*/}
+            {/*            transition={{ duration: 0.6, delay: 0.2 }}*/}
+            {/*            viewport={{ once: true }}*/}
+            {/*        >*/}
+            {/*            Subscribe to our newsletter for the latest diamond insights, care tips, and exclusive jewelry updates.*/}
+            {/*        </motion.p>*/}
+            {/*        <motion.div*/}
+            {/*            className="flex gap-3 max-w-md mx-auto"*/}
+            {/*            initial={{ opacity: 0, y: 20 }}*/}
+            {/*            whileInView={{ opacity: 1, y: 0 }}*/}
+            {/*            transition={{ duration: 0.6, delay: 0.4 }}*/}
+            {/*            viewport={{ once: true }}*/}
+            {/*        >*/}
+            {/*            <input*/}
+            {/*                type="email"*/}
+            {/*                placeholder="Enter your email"*/}
+            {/*                className="flex-1 px-4 py-3 border border-border rounded-lg bg-background"*/}
+            {/*            />*/}
+            {/*            <motion.button*/}
+            {/*                className="px-8 py-3 bg-accent text-white font-semibold hover:bg-accent-dark transition rounded-lg"*/}
+            {/*                whileHover={{ scale: 1.05 }}*/}
+            {/*                whileTap={{ scale: 0.95 }}*/}
+            {/*            >*/}
+            {/*                Subscribe*/}
+            {/*            </motion.button>*/}
+            {/*        </motion.div>*/}
+            {/*    </div>*/}
+            {/*</motion.section>*/}
         </div>
     )
 }

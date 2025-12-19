@@ -295,7 +295,7 @@ export default function Guide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        Ready to Find Your Perfect Deal?
+                        Ready to Find Your Perfect Diamond?
                     </motion.h2>
                     <motion.p
                         className="text-base md:text-lg text-muted-foreground mb-10"

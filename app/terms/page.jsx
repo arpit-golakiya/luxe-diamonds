@@ -24,10 +24,7 @@ export default function Terms() {
                     <section>
                         <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Benefits </h2>
                         <p className="mb-2">
-                            It will save significant TIME for both parties involved, allowing for constructive use towards enhancing mutual benefits.
-                        </p>
-                        <p className="mb-2">
-                            It will save significant TIME for both parties involved, allowing for constructive use towards enhancing mutual benefits.
+                            To save significant TIME for both parties involved, allowing for constructive use towards enhancing mutual benefits.
                         </p>
                         <p className="mb-2">
                             The right quality at the right price will be available to you at your fingertips so you can choose from wide range of our online inventory.
@@ -86,7 +83,7 @@ export default function Terms() {
                         <p className="mb-2">
                             Shipping charges include the cost of shipping from our office to the nearest International Airport. Destination charges (i.e., from Airport to buyer's place, or any import duties or taxes in destination country) are to be borne by the ordering customers only.
                         </p>
-                        <p className="mb-2">
+                        <p className="mb-2 font-bold">
                             Please Note: Ishanta Jewels reserves the rights to make changes to these Terms and Conditions at any time without prior notifications.
                         </p>
                     </section>

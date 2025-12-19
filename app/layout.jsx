@@ -45,49 +45,36 @@ export default function RootLayout({ children }) {
                 </div>
 
                 {/* DESKTOP LAYOUT */}
-                <div className="hidden md:grid grid-cols-[auto_1fr_auto] items-center h-full">
-                    {/* Logo */}
+                <div className="hidden md:grid grid-cols-[auto_1fr] items-center h-full">
+                    {/* Logo (LEFT) */}
                     <Link href="/" className="flex items-center md:pl-4 lg:pl-6">
                         <span className="text-2xl font-serif font-bold text-white">Ishanta</span>
                         <span className="text-2xl font-serif text-white ml-1">Jewels</span>
                     </Link>
 
-                    <div className="flex justify-center">
-                        <div className="flex items-center gap-8">
-                            <Link href="/" className="text-white">
-                                Home
-                            </Link>
-                            <Link href="/about" className="text-white">
-                                About us
-                            </Link>
+                    {/* Menu (RIGHT) */}
+                    <div className="flex items-center gap-6 justify-end md:pr-4 lg:pr-6">
+                        <Link href="/" className="text-white">Home</Link>
+                        <Link href="/about" className="text-white">About us</Link>
 
-                            <div className="group relative">
-                                <button className="text-white">Our Products</button>
-                                <div className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-                                    <Link href="/products/natural-diamonds" className="block px-4 py-2 hover:bg-accent/10">
-                                        Natural Diamonds
-                                    </Link>
-                                    <Link href="/products/lab-grown" className="block px-4 py-2 hover:bg-accent/10">
-                                        Lab-Grown Diamonds
-                                    </Link>
-                                    <Link href="/products/jewelry" className="block px-4 py-2 hover:bg-accent/10">
-                                        Diamond Jewelry
-                                    </Link>
-                                </div>
+                        <div className="group relative">
+                            <button className="text-white">Our Products</button>
+                            <div className="absolute left-0 mt-0 w-48 bg-background shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+                                <Link href="/products/natural-diamonds" className="block px-4 py-2 hover:bg-accent/10">
+                                    Natural Diamonds
+                                </Link>
+                                <Link href="/products/lab-grown" className="block px-4 py-2 hover:bg-accent/10">
+                                    Lab-Grown Diamonds
+                                </Link>
+                                <Link href="/products/jewelry" className="block px-4 py-2 hover:bg-accent/10">
+                                    Diamond Jewelry
+                                </Link>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="flex items-center gap-6 md:pr-4 lg:pr-6">
-                        <Link href="/guide" className="text-white">
-                            Diamond's 4C Guide
-                        </Link>
-                        <Link href="/blog" className="text-white">
-                            Blogs
-                        </Link>
-                        <Link href="/careers" className="text-white">
-                            Career
-                        </Link>
+                        <Link href="/guide" className="text-white">Diamond's 4C Guide</Link>
+                        <Link href="/blog" className="text-white">Blogs</Link>
+                        <Link href="/careers" className="text-white">Career</Link>
 
                         <Link
                             href="/contact"
@@ -150,11 +137,11 @@ export default function RootLayout({ children }) {
         {/* Footer */}
         <footer className="bg-surface border-t border-border mt-20 bg-accent">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                    <div>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+                    <div className="md:col-span-2">
                         <h3 className="text-lg font-serif font-bold text-white mb-4">Ishanta Jewels</h3>
                         <p className="text-sm text-white">
-                            Crafting timeless elegance through premium diamonds and exceptional jewelry.
+                            Crafting timeless elegance through premium diamonds<br/> and exceptional jewelry.
                         </p>
                     </div>
                     <div>
@@ -162,7 +149,7 @@ export default function RootLayout({ children }) {
                         <ul className="space-y-2">
                             <li>
                                 <Link href="/products/natural-diamonds"
-                                      className="text-sm text-white hover:text-accent">
+                                      className="text-sm text-white">
                                     Natural Diamonds
                                 </Link>
                             </li>
@@ -219,7 +206,7 @@ export default function RootLayout({ children }) {
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                         {/* Follow Us Section - Left */}
                         <div>
-                            <h4 className="font-semibold mb-4 text-white">Follow Us</h4>
+                            <h4 className="font-semibold mb-4 text-white">Follow us</h4>
                             <div className="flex gap-6">
                                 <a
                                     href="https://www.instagram.com/ishanta_jewels_pvt_ltd"
@@ -272,14 +259,23 @@ export default function RootLayout({ children }) {
 
                         <div className="text-center md:text-right">
                             <h4 className="font-semibold mb-4 text-white">Certified by</h4>
-                            <Image
-                                src="/logo-igi-gia-inverse.png"
-                                alt="IGI - International Gemological Institute"
-                                width={60}
-                                height={20}
-                                className="mx-auto md:mx-0 md:ml-auto"
-                            />
+
+                            <div className="flex items-center justify-center md:justify-end gap-4">
+                                <Image
+                                    src="/logo-igi-inverse.png"
+                                    alt="IGI - International Gemological Institute"
+                                    width={60}
+                                    height={20}
+                                />
+                                <Image
+                                    src="/logo_GIA.png"
+                                    alt="GIA - Gemological Institute of America"
+                                    width={60}
+                                    height={20}
+                                />
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
