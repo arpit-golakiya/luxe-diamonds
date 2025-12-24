@@ -15,7 +15,9 @@ export default function Contact() {
         message: "",
         diamondType: "",
         country: "",
-    })
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -27,26 +29,45 @@ export default function Contact() {
 
     // For Web3Forms
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        const response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
+        if (isSubmitting) return
 
-        const result = await response.json();
+        setIsSubmitting(true)
 
-        if (result.status === "success") {
-            alert("Thank you! We will connect with you soon.");
-        } else {
-            alert("Submission failed");
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+
+            const result = await response.json()
+
+            if (result.status === "success") {
+                alert("Thank you! We will connect with you soon.")
+
+                // ✅ Reset form
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    subject: "",
+                    message: "",
+                    diamondType: "",
+                    country: "",
+                })
+            } else {
+                alert("Submission failed")
+            }
+        } catch (error) {
+            alert("Something went wrong. Please try again.")
+        } finally {
+            setIsSubmitting(false)
         }
-    };
-
-
+    }
 
     return (
         <div className="min-h-screen">
@@ -213,11 +234,19 @@ export default function Contact() {
 
                                 <button
                                     type="submit"
-                                    className="w-full py-3 bg-accent text-white font-semibold hover:bg-accent-dark transition"
+                                    disabled={isSubmitting}
+                                    className={`w-full py-3 font-semibold transition flex items-center justify-center gap-2
+        ${isSubmitting
+                                        ? "bg-accent/70 cursor-not-allowed"
+                                        : "bg-accent hover:bg-accent-dark text-white"
+                                    }
+    `}
                                 >
-                                    Send Message
+                                    {isSubmitting && (
+                                        <span className="h-5 w-5 border-2 border-white/40 border-t-white rounded-full animate-spin"></span>
+                                    )}
+                                    {isSubmitting ? "Sending..." : "Send Message"}
                                 </button>
-
                             </form>
                         </div>
 

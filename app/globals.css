@@ -17,8 +17,8 @@
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   /* Lightened accent to a richer, more visible dark blue */
-  --accent: oklch(0.28 0.12 260);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: #011633; /* very dark navy */
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);

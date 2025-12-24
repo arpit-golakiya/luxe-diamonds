@@ -13,7 +13,8 @@ export default function Careers() {
         experience: "",
         resume: null,
         message: "",
-    })
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const [selectedPosition, setSelectedPosition] = useState(null)
 
@@ -33,22 +34,43 @@ export default function Careers() {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        const response = await fetch("/api/careers", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-        });
+        if (isSubmitting) return
 
-        const result = await response.json();
+        setIsSubmitting(true)
 
-        if (result.status === "success") {
-            alert("Application submitted successfully!");
-        } else {
-            alert("Submission failed");
+        try {
+            const response = await fetch("/api/careers", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            })
+
+            const result = await response.json()
+
+            if (result.status === "success") {
+                alert("Application submitted successfully!")
+
+                // ✅ Reset form
+                setFormData({
+                    fullName: "",
+                    email: "",
+                    phone: "",
+                    position: "",
+                    experience: "",
+                    resume: null,
+                    message: "",
+                })
+            } else {
+                alert("Submission failed")
+            }
+        } catch (error) {
+            alert("Something went wrong. Please try again.")
+        } finally {
+            setIsSubmitting(false)
         }
-    };
+    }
 
 
     const jobOpenings = [
@@ -283,10 +305,20 @@ export default function Careers() {
 
                         <button
                             type="submit"
-                            className="w-full py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition"
+                            disabled={isSubmitting}
+                            className={`w-full py-3 font-semibold rounded-lg transition flex items-center justify-center gap-2
+        ${isSubmitting
+                                ? "bg-accent/70 cursor-not-allowed"
+                                : "bg-accent text-accent-foreground hover:opacity-90"
+                            }
+    `}
                         >
-                            Submit Application
+                            {isSubmitting && (
+                                <span className="h-5 w-5 border-2 border-accent-foreground/40 border-t-accent-foreground rounded-full animate-spin"></span>
+                            )}
+                            {isSubmitting ? "Submitting..." : "Submit Application"}
                         </button>
+
                     </form>
                 </div>
             </section>

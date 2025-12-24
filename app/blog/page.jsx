@@ -51,7 +51,7 @@ export default function Blog() {
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         Expert tips, diamond care guides, and jewelry trends to help you make informed decisions and care for your
-                        precious stones.
+                        precious stones and your diamond jewelry.
                     </motion.p>
                 </div>
             </motion.section>
