@@ -232,10 +232,10 @@ export default function About() {
                 </div>
             </section>
 
-            <section className="py-20 bg-background">
+            <section className="py-20 bg-accent">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.h2
-                        className="text-4xl font-serif font-bold text-center mb-16"
+                        className="text-4xl font-serif font-bold text-center text-white mb-16"
                         ref={valuesRef}
                         initial={{ opacity: 0, y: 20 }}
                         animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -254,9 +254,9 @@ export default function About() {
                             variants={itemVariants}
                             whileHover={{ y: -8, transition: { duration: 0.3 } }}
                         >
-                            <div className="text-accent text-4xl mb-4">⬩</div>
-                            <h3 className="text-xl font-semibold mb-3">Integrity</h3>
-                            <p className="text-muted-foreground">
+                            <div className="text-accent text-4xl mb-4 text-white">⬩</div>
+                            <h3 className="text-xl font-semibold mb-3 text-white">Integrity</h3>
+                            <p className="text-muted-foreground text-white">
                                 Complete transparency in all our dealings, from sourcing to pricing.
                             </p>
                         </motion.div>
@@ -265,18 +265,18 @@ export default function About() {
                             variants={itemVariants}
                             whileHover={{ y: -8, transition: { duration: 0.3 } }}
                         >
-                            <div className="text-accent text-4xl mb-4">◇</div>
-                            <h3 className="text-xl font-semibold mb-3">Excellence</h3>
-                            <p className="text-muted-foreground">We maintain the highest standards in quality and craftsmanship.</p>
+                            <div className="text-accent text-4xl mb-4 text-white">◇</div>
+                            <h3 className="text-xl font-semibold mb-3 text-white">Excellence</h3>
+                            <p className="text-muted-foreground text-white">We maintain the highest standards in quality and craftsmanship.</p>
                         </motion.div>
                         <motion.div
                             className="bg-surface p-8 rounded-lg"
                             variants={itemVariants}
                             whileHover={{ y: -8, transition: { duration: 0.3 } }}
                         >
-                            <div className="text-accent text-4xl mb-4">◆</div>
-                            <h3 className="text-xl font-semibold mb-3">Responsibility</h3>
-                            <p className="text-muted-foreground">Ethical sourcing and sustainable practices guide every decision.</p>
+                            <div className="text-accent text-4xl mb-4 text-white">◆</div>
+                            <h3 className="text-xl font-semibold mb-3 text-white">Responsibility</h3>
+                            <p className="text-muted-foreground text-white">Ethical sourcing and sustainable practices guide every decision.</p>
                         </motion.div>
                     </motion.div>
                 </div>

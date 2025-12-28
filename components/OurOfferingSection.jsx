@@ -92,26 +92,52 @@ export default function OurOfferingSection({title}) {
             </div>
 
             {/* CTA Section */}
-            <motion.div
-                className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-border text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={offeringsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+            <motion.section
+                className="py-20 bg-background"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
             >
-                <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
-                    Interested in our premium diamonds?
-                </p>
-                <motion.a
-                    href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                >
-                    Get Quote Now
-                </motion.a>
-            </motion.div>
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <motion.h2
+                        className="text-3xl md:text-4xl font-serif font-bold mb-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        Ready to Find Your Perfect Diamond?
+                    </motion.h2>
+                    <motion.p
+                        className="text-base md:text-lg text-muted-foreground mb-10"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        Use your knowledge of the 4Cs to explore our collection and find the perfect stone.
+                    </motion.p>
+                    <motion.div
+                        className="flex gap-4 md:gap-6 justify-center flex-wrap"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <motion.a
+                            href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-10 py-4 bg-accent rounded-lg text-white font-semibold hover:bg-accent-dark transition"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Get Quote Now
+                        </motion.a>
+                    </motion.div>
+                </div>
+            </motion.section>
         </div>
     </section>
     )

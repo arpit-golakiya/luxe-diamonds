@@ -386,7 +386,7 @@ export default function Home() {
                                 <WhatsAppIcon />
                             </motion.div>
 
-                            <p className="text-gray-600 text-sm mb-2">Chat with us on WhatsApp</p>
+                            <p className="text-gray-600 text-sm mb-2">Call or WhatsApp us</p>
 
                             <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition">
                                 +91 84878 18980
