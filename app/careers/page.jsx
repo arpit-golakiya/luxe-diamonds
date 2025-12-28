@@ -44,7 +44,10 @@ export default function Careers() {
             const response = await fetch("/api/careers", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    type: "career",
+                    ...formData
+                }),
             })
 
             const result = await response.json()

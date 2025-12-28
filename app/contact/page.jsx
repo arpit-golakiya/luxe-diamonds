@@ -38,10 +38,11 @@ export default function Contact() {
         try {
             const response = await fetch("/api/contact", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    type: "contact",
+                    ...formData
+                }),
             })
 
             const result = await response.json()
