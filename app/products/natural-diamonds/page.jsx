@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import Link from "next/link"
+import OurOfferingSection from "../../../components/OurOfferingSection";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -26,7 +26,6 @@ const itemVariants = {
 
 export default function NaturalDiamonds() {
     const { ref: processRef, inView: processInView } = useInView({ threshold: 0.2, triggerOnce: true })
-    const { ref: offeringsRef, inView: offeringsInView } = useInView({ threshold: 0.2, triggerOnce: true })
 
     const processSteps = [
         {
@@ -59,14 +58,7 @@ export default function NaturalDiamonds() {
             description:
                 "Once polished, every single facet of each individual diamond is carefully revived by both a highly accurate laser scanner as well as by a trained gemmologist. Any diamond that doesn't meet our strict quality control standards is sent back for re-polishing. The diamonds are then sent out to some of the most respected diamond grading laboratories worldwide such as GIA and IGI for certification before being studded in your precious diamond jewellery.",
         },
-    ]
-
-    const offerings = [
-        "Loose Parcels & Certified Diamonds",
-        "Round Brilliants & Various Fancy shapes like Oval, Pear, Marquise, Princess, Cushion, Emerald, Radiant, Heart etc.",
-        "From 0.01ct through 5.00ct & above.",
-        "D to Z Colors & Fancy Color diamonds in all measurements.",
-    ]
+    ];
 
     return (
         <div className="min-h-screen bg-background">
@@ -170,59 +162,7 @@ export default function NaturalDiamonds() {
                 </div>
             </section>
 
-            {/* Our Offerings Section */}
-            <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
-                <div className="max-w-5xl mx-auto">
-                    <motion.div
-                        ref={offeringsRef}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={offeringsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-8 sm:mb-12">
-                            Our offerings are as follows:
-                        </h2>
-
-                        <motion.div
-                            className="space-y-4 sm:space-y-5"
-                            initial="hidden"
-                            animate={offeringsInView ? "visible" : "hidden"}
-                            variants={containerVariants}
-                        >
-                            {offerings.map((offering, index) => (
-                                <motion.div key={index} className="flex gap-3 sm:gap-4 items-start" variants={itemVariants}>
-                                    <div className="flex-shrink-0 mt-1">
-                                        <div className="flex items-center justify-center h-5 w-5 sm:h-6 sm:w-6">
-                                            <span className="text-primary text-lg sm:text-xl">◇</span>
-                                        </div>
-                                    </div>
-                                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{offering}</p>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-                    </motion.div>
-
-                    {/* CTA Section */}
-                    <motion.div
-                        className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-border"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={offeringsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                    >
-                        <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">If not done yet,</p>
-                        <motion.a
-                            href="https://wa.me/918487818980?text=Hi%20I%20would%20like%20to%20know%20more"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block px-10 py-4 bg-accent text-white font-semibold hover:bg-accent-dark transition"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Get Quote Now
-                        </motion.a>
-                    </motion.div>
-                </div>
-            </section>
+            <OurOfferingSection title={"natural"} />
         </div>
     )
 }
