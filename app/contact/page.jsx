@@ -32,38 +32,47 @@ export default function Contact() {
         e.preventDefault()
 
         if (isSubmitting) return
-
         setIsSubmitting(true)
 
         try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    type: "contact",
-                    ...formData
-                }),
+            const formBody = new URLSearchParams({
+                type: "contact",
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                diamondType: formData.diamondType,
+                country: formData.country,
+                subject: formData.subject,
+                message: formData.message,
             })
 
-            const result = await response.json()
+            await fetch(
+                "https://script.google.com/macros/s/AKfycbzMYp_gcnlY1yOUNWLZtJSeA3sEmAz7jQi1c4DvTVhjuagG4oTTRgwwsuQH8bzPvYsMkw/exec",
+                {
+                    method: "POST",
+                    mode: "no-cors", // ✅ KEY FIX
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: formBody.toString(),
+                }
+            )
 
-            if (result.status === "success") {
-                alert("Thank you! We will connect with you soon.")
+            // ✅ If fetch didn’t throw, GAS received it
+            alert("Thank you! We will connect with you soon.")
 
-                // ✅ Reset form
-                setFormData({
-                    name: "",
-                    email: "",
-                    phone: "",
-                    subject: "",
-                    message: "",
-                    diamondType: "",
-                    country: "",
-                })
-            } else {
-                alert("Submission failed")
-            }
-        } catch (error) {
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                subject: "",
+                message: "",
+                diamondType: "",
+                country: "",
+            })
+
+        } catch (err) {
+            console.error(err)
             alert("Something went wrong. Please try again.")
         } finally {
             setIsSubmitting(false)
@@ -306,3 +315,79 @@ export default function Contact() {
         </div>
     )
 }
+
+
+// function doPost(e) {
+//     const data = JSON.parse(e.postData.contents);
+//
+//     if (data.type === "contact") {
+//         return handleContact(data);
+//     }
+//
+//     if (data.type === "career") {
+//         return handleCareer(data);
+//     }
+//
+//     return ContentService.createTextOutput("INVALID");
+// }
+//
+// /* ---------- CONTACT ---------- */
+// function handleContact(data) {
+//     const sheet = SpreadsheetApp
+//         .openById("16tzMNnviMNFD6p3T8bLdIRuj7wMv-b5F5n12o-GX1cg")
+//         .getSheetByName("Leads");
+//
+//     sheet.appendRow([
+//         new Date(),
+//         data.name,
+//         data.email,
+//         data.phone,
+//         data.diamondType,
+//         data.country,
+//         data.subject,
+//         data.message
+//     ]);
+//
+//     MailApp.sendEmail({
+//         to: "info@ishantajewels.com",
+//         subject: "New Contact Form Lead",
+//         htmlBody: `<p><b>Name:</b> ${data.name}</p><p>${data.message}</p>`
+//     });
+//
+//     return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
+//         .setMimeType(ContentService.MimeType.JSON);
+// }
+//
+// /* ---------- CAREERS ---------- */
+// function handleCareer(data) {
+//     const sheet = SpreadsheetApp
+//         .openById("1tiF4lg0B5d9ixrUXZOuzh3xkJgaWBTVTKw1ZAuxHiak")
+//         .getSheetByName("Careers");
+//
+//     sheet.appendRow([
+//         new Date(),
+//         data.fullName,
+//         data.email,
+//         data.phone,
+//         data.position,
+//         data.experience,
+//         data.message
+//     ]);
+//
+//     MailApp.sendEmail({
+//         to: "info@ishantajewels.com",
+//         subject: `New Career Application – ${data.position}`,
+//         htmlBody: `
+//       <h3>New Career Application</h3>
+//       <p><b>Name:</b> ${data.fullName}</p>
+//       <p><b>Email:</b> ${data.email}</p>
+//       <p><b>Phone:</b> ${data.phone}</p>
+//       <p><b>Position:</b> ${data.position}</p>
+//       <p><b>Experience:</b> ${data.experience}</p>
+//       <p><b>Message:</b><br/>${data.message}</p>
+//     `
+//     });
+//
+//     return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
+//         .setMimeType(ContentService.MimeType.JSON);
+// }

@@ -37,38 +37,45 @@ export default function Careers() {
         e.preventDefault()
 
         if (isSubmitting) return
-
         setIsSubmitting(true)
 
         try {
-            const response = await fetch("/api/careers", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    type: "career",
-                    ...formData
-                }),
+            const formBody = new URLSearchParams({
+                type: "career",
+                fullName: formData.fullName,
+                email: formData.email,
+                phone: formData.phone,
+                position: formData.position,
+                experience: formData.experience,
+                message: formData.message,
             })
 
-            const result = await response.json()
+            await fetch(
+                "https://script.google.com/macros/s/AKfycbzMYp_gcnlY1yOUNWLZtJSeA3sEmAz7jQi1c4DvTVhjuagG4oTTRgwwsuQH8bzPvYsMkw/exec",
+                {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: formBody.toString(),
+                }
+            )
 
-            if (result.status === "success") {
-                alert("Application submitted successfully!")
+            alert("Application submitted successfully!")
 
-                // ✅ Reset form
-                setFormData({
-                    fullName: "",
-                    email: "",
-                    phone: "",
-                    position: "",
-                    experience: "",
-                    resume: null,
-                    message: "",
-                })
-            } else {
-                alert("Submission failed")
-            }
+            setFormData({
+                fullName: "",
+                email: "",
+                phone: "",
+                position: "",
+                experience: "",
+                resume: null, // kept for UI only
+                message: "",
+            })
+
         } catch (error) {
+            console.error(error)
             alert("Something went wrong. Please try again.")
         } finally {
             setIsSubmitting(false)
