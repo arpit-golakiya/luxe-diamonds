@@ -272,8 +272,8 @@ export default function RootLayout({ children }) {
                                     height={20}
                                 />
                                 <Image
-                                    src="/logo_GIA.png"
-                                    alt="GIA - Gemological Institute of America"
+                                    src="/logo-gia-inverse.png"
+                                    alt="IGI - International Gemological Institute"
                                     width={60}
                                     height={20}
                                 />
