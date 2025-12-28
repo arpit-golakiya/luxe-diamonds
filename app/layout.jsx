@@ -264,8 +264,9 @@ export default function RootLayout({ children }) {
                         <div className="text-center md:text-right">
                             <h4 className="font-semibold mb-4 text-white">Certified by</h4>
 
-                            <div className="flex items-center justify-center md:justify-end gap-4">
+                            <div className="flex items-center justify-center md:justify-end gap-1">
                                 <Image
+                                    style={{width: "48px", height: "28px"}}
                                     src="/logo-igi-inverse.png"
                                     alt="IGI - International Gemological Institute"
                                     width={60}
