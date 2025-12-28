@@ -34,51 +34,51 @@ export default function About() {
     return (
         <div className="min-h-screen">
             <motion.section
-                className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden"
+                className="relative w-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <Image
-                    src="/about_us_hero.jpeg"
-                    alt="Premium Diamonds by Ishanta Jewels"
-                    fill
-                    priority
-                    className="object-cover"
-                />
+                {/* MOBILE IMAGE */}
+                <div className="relative w-full h-[55vh] md:hidden">
+                    <Image
+                        src="/about_us_hero.jpeg"
+                        alt="Premium Diamonds by Ishanta Jewels"
+                        fill
+                        priority
+                        className="object-cover object-right"
+                    />
+                    <div className="absolute inset-0 bg-black/55" />
+                </div>
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/50" />
+                {/* DESKTOP IMAGE */}
+                <div className="relative w-full hidden md:block">
+                    <Image
+                        src="/about_us_hero.jpeg"
+                        alt="Premium Diamonds by Ishanta Jewels"
+                        width={1920}
+                        height={600}
+                        priority
+                        className="w-full h-auto"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                </div>
 
-                {/* Content */}
-                <div className="relative z-10 h-full">
+                <div className="absolute inset-0 z-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-                        <div className="flex h-full items-start pt-20 md:pt-28">
-                            <motion.div
-                                initial={{ y: 30, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.7, delay: 0.2 }}
-                            >
-                                <motion.h1
-                                    className="text-4xl md:text-6xl font-serif font-bold text-white mb-4"
-                                >
+                        <div className="flex h-full items-center md:items-start pt-0 md:pt-28">
+                            <div>
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
                                     Ishanta Jewels
-                                </motion.h1>
-
-                                <motion.p
-                                    className="text-lg md:text-2xl text-gray-200 max-w-2xl"
-                                    initial={{ y: 20, opacity: 0 }}
-                                    animate={{ y: 0, opacity: 1 }}
-                                    transition={{ duration: 0.7, delay: 0.4 }}
-                                >
-                                    Crafting timeless elegance through premium diamonds and exceptional jewelry.
-                                </motion.p>
-                            </motion.div>
+                                </h1>
+                                <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl">
+                                    Crafting timeless elegance through<br/> premium diamonds and exceptional jewelry.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </motion.section>
-
 
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
