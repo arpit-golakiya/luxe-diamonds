@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
             <title>Ishanta Jewels - Premium Diamond Jewelry</title>
             <meta
                 name="description"
-                content="Discover premium diamonds and luxury jewelry. Natural and lab-grown diamonds crafted to perfection."
+                content="Discover premium diamonds and luxury jewelry. Natural and Lab Grown diamonds crafted to perfection."
             />
         </head>
         <body className="bg-background text-foreground font-serif">
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
                                     Natural Diamonds
                                 </Link>
                                 <Link href="/products/lab-grown" className="block px-4 py-2 hover:bg-accent/10">
-                                    Lab-Grown Diamonds
+                                    Lab Grown Diamonds
                                 </Link>
                                 <Link href="/products/jewelry" className="block px-4 py-2 hover:bg-accent/10">
                                     Diamond Jewelry
@@ -103,7 +103,7 @@ export default function RootLayout({ children }) {
                             Natural Diamonds
                         </Link>
                         <Link href="/products/lab-grown" className="block text-white pl-4 py-1 text-sm">
-                            Lab-Grown Diamonds
+                            Lab Grown Diamonds
                         </Link>
                         <Link href="/products/jewelry" className="block text-white pl-4 py-1 text-sm">
                             Diamond Jewelry
@@ -159,7 +159,7 @@ export default function RootLayout({ children }) {
                             </li>
                             <li>
                                 <Link href="/products/lab-grown" className="text-sm text-white">
-                                    Lab-Grown Diamonds
+                                    Lab Grown Diamonds
                                 </Link>
                             </li>
                             <li>

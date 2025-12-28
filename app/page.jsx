@@ -256,7 +256,7 @@ export default function Home() {
                             </Link>
                         </motion.div>
 
-                        {/* Lab-Grown Diamonds */}
+                        {/* Lab Grown Diamonds */}
                         <motion.div
                             custom={1}
                             variants={collectionCardVariants}
@@ -268,12 +268,12 @@ export default function Home() {
                                 <div className="relative h-96 bg-blue-200 rounded-lg overflow-hidden mb-4">
                                     <Image
                                         src="/lab_grown.png"
-                                        alt="Lab-Grown Diamonds Collection"
+                                        alt="Lab Grown Diamonds Collection"
                                         fill
                                         className="object-cover group-hover:scale-105 transition duration-300"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6 group-hover:from-black/70 transition">
-                                        <h3 className="text-2xl font-serif font-bold text-white">Lab-Grown Diamonds</h3>
+                                        <h3 className="text-2xl font-serif font-bold text-white">Lab Grown Diamonds</h3>
                                     </div>
                                 </div>
                                 <p className="text-muted-foreground">

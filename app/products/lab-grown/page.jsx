@@ -69,7 +69,7 @@ export default function LabGrownDiamonds() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4 sm:mb-6 text-balance text-center leading-tight">
-                            Lab-Grown Diamonds
+                            Lab Grown Diamonds
                         </h1>
                     </motion.div>
 
@@ -79,7 +79,7 @@ export default function LabGrownDiamonds() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        Lab-grown diamonds, also known as synthetic or cultured diamonds, are created through advanced technological
+                        Lab Grown diamonds, also known as synthetic or cultured diamonds, are created through advanced technological
                         processes that replicate the conditions under which natural diamonds form. These diamonds are chemically,
                         physically, and optically identical to natural diamonds, these diamonds have same physical and chemical
                         properties as mined diamonds. yet they are produced in controlled laboratory environments rather than mined
@@ -103,7 +103,7 @@ export default function LabGrownDiamonds() {
                     >
                         <img
                             src="/lab_grown_hero_image.png"
-                            alt="Lab-grown diamonds manufacturing process"
+                            alt="Lab Grown diamonds manufacturing process"
                             className="w-full h-auto object-cover"
                         />
                     </motion.div>
@@ -121,10 +121,10 @@ export default function LabGrownDiamonds() {
                         className="mb-12 sm:mb-16"
                     >
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 sm:mb-4">
-                            The process of manufacturing Lab-Grown Diamonds!
+                            The process of manufacturing Lab Grown Diamonds!
                         </h2>
                         <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                            Lab-Grown Diamonds are revolutionizing the diamonds and jewelry industry with an environmentally friendly
+                            Lab Grown Diamonds are revolutionizing the diamonds and jewelry industry with an environmentally friendly
                             and morally sound approach to their production. Let's delve into this complex process.
                         </p>
                     </motion.div>
@@ -158,8 +158,8 @@ export default function LabGrownDiamonds() {
                     </motion.div>
 
                     <p className="text-base sm:text-lg mt-12 sm:mt-16 text-muted-foreground leading-relaxed">
-                        Here at Ishanta Jewels, we have extensively researched lab-grown diamonds over the years, and in our efforts
-                        to make a positive environmental impact, we strive to offer the highest quality of lab-grown diamonds.
+                        Here at Ishanta Jewels, we have extensively researched Lab Grown diamonds over the years, and in our efforts
+                        to make a positive environmental impact, we strive to offer the highest quality of Lab Grown diamonds.
                     </p>
                 </div>
             </section>
