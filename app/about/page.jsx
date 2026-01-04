@@ -48,7 +48,7 @@ export default function About() {
                         priority
                         className="object-cover object-right"
                     />
-                    <div className="absolute inset-0 bg-black/55" />
+                    <div className="absolute inset-0 " />
                 </div>
 
                 {/* DESKTOP IMAGE */}
@@ -61,12 +61,12 @@ export default function About() {
                         priority
                         className="w-full h-auto"
                     />
-                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 " />
                 </div>
 
                 <div className="absolute inset-0 z-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-                        <div className="flex h-full items-center md:items-start pt-0 md:pt-28">
+                        <div className="flex h-full items-start pt-10 md:pt-28">
                             <div>
                                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
                                     Ishanta Jewels

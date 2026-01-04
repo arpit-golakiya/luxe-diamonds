@@ -174,7 +174,7 @@ export default function Contact() {
                                 {/* Diamond Type + Country in one row */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-semibold mb-2">Diamond Type</label>
+                                        <label className="block text-sm font-semibold mb-2">Requirement Type</label>
                                         <select
                                             name="diamondType"
                                             value={formData.diamondType}

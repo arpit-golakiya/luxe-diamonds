@@ -22,29 +22,25 @@ export default function OurOfferingSection({title}) {
     const offerings = [
         {
             title: "Loose Parcels & Certified Diamonds",
-            subtitle: "(CVD & HPHT)",
-            description: `Loose Parcels & Certified ${title} Diamonds. (CVD & HPHT)`,
-            image: "/offerings/loose_parcels_certified_diamonds.jpg",
+            description: `Loose Parcels & Certified ${title} Diamonds. ${title === "natural" ? '' : '(CVD & HPHT)'}`,
+            image: "/offerings/loose_parcels_certified_diamonds.jpeg",
             alt: `Loose parcels of certified  ${title} diamonds`,
         },
         {
             title: "Round Brilliants & Fancy Shapes",
-            subtitle: "Oval, Pear, Marquise, Princess & More",
             description: "Round Brilliants & Various Fancy shapes like Oval, Pear, Marquise, Princess, Cushion, Emerald, Radiant, Heart & more.",
             image: "/offerings/round_brilliants_various_fancy_shapzs_like_oval_etc.jpg",
             alt: "Round brilliants and various fancy shaped diamonds",
         },
         {
             title: "All White & Fancy Colors",
-            subtitle: "All Measurements Available",
             description: "All white Colors & Fancy Color diamonds in all measurements.",
-            image: "/offerings/all_white_colors_fancy_color.jpg",
+            image: "/offerings/all_white_colors_fancy_color.jpeg",
             alt: "White and fancy color diamonds",
         },
         {
             title: "Complete Carat Range",
-            subtitle: "0.01ct through 10.00ct & Above",
-            description: "0.01ct through 10.00ct and above.",
+            description: "0.002ct through 10.00ct and above.",
             image: "/offerings/zero_through_ten_and_above.png",
             alt: "Diamond carat weight sizes comparison",
         },
@@ -83,7 +79,7 @@ export default function OurOfferingSection({title}) {
                             <img
                                 src={offering.image || "/placeholder.svg"}
                                 alt={offering.alt}
-                                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                                className="w-full h-full group-hover:scale-105 transition duration-300"
                             />
                         </div>
                         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{offering.description}</p>
