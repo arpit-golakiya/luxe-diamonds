@@ -207,11 +207,15 @@ export default function RootLayout({ children }) {
                 </div>
 
                 <div className="border-t border-white/20 pt-8 mb-8">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-                        {/* Follow Us Section - Left */}
-                        <div>
-                            <h4 className="font-semibold mb-4 text-white">Follow us</h4>
-                            <div className="flex gap-6">
+                    <div className="flex flex-col md:flex-row justify-between items-stretch gap-8">
+
+                        {/* LEFT */}
+                        <div className="flex flex-col justify-between">
+                            <h4 className="font-semibold text-white mb-4">
+                                Follow us
+                            </h4>
+
+                            <div className="flex gap-6 mt-auto">
                                 <a
                                     href="https://www.instagram.com/ishanta_jewels_pvt_ltd"
                                     target="_blank"
@@ -221,6 +225,7 @@ export default function RootLayout({ children }) {
                                 >
                                     <Instagram size={24} />
                                 </a>
+
                                 <a
                                     href="https://www.facebook.com/profile.php?id=61558748786353"
                                     target="_blank"
@@ -230,6 +235,7 @@ export default function RootLayout({ children }) {
                                 >
                                     <Facebook size={24} />
                                 </a>
+
                                 <a
                                     href="https://www.linkedin.com/company/ishanta-jewels"
                                     target="_blank"
@@ -239,6 +245,7 @@ export default function RootLayout({ children }) {
                                 >
                                     <Linkedin size={24} />
                                 </a>
+
                                 <a
                                     href="https://x.com/Ishanta_jewels"
                                     target="_blank"
@@ -261,20 +268,23 @@ export default function RootLayout({ children }) {
                             </div>
                         </div>
 
-                        <div className="text-center md:text-right">
-                            <h4 className="font-semibold mb-4 text-white">Certified by</h4>
+                        {/* RIGHT */}
+                        <div className="flex flex-col justify-between text-left md:text-right">
+                            <h4 className="font-semibold text-white mb-4">
+                                Certified by
+                            </h4>
 
-                            <div className="flex items-center justify-center md:justify-end gap-1">
+                            <div className="flex items-center justify-left md:justify-end gap-2 mt-auto">
                                 <Image
-                                    style={{width: "48px", height: "28px"}}
                                     src="/logo-igi-inverse.png"
                                     alt="IGI - International Gemological Institute"
-                                    width={60}
-                                    height={20}
+                                    width={38}
+                                    height={24}
                                 />
+
                                 <Image
                                     src="/logo-gia-inverse.png"
-                                    alt="IGI - International Gemological Institute"
+                                    alt="GIA - Gemological Institute of America"
                                     width={60}
                                     height={20}
                                 />
@@ -283,6 +293,7 @@ export default function RootLayout({ children }) {
 
                     </div>
                 </div>
+
 
                 <div className="border-t border-border pt-8 text-center text-sm text-white">
                     <p>&copy; 2025 Ishanta Jewels Pvt. Ltd. All rights reserved.</p>
