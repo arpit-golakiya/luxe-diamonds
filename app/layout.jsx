@@ -8,6 +8,7 @@ import {Facebook, Instagram, Linkedin, MessagesSquare, Twitter, X} from "lucide-
 import { recoleta } from "./fonts";
 import Image from "next/image";
 import Pinterest from "../components/icons/Pinterest";
+import { Toaster } from "sonner";
 
 export default function RootLayout({ children }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -303,6 +304,11 @@ export default function RootLayout({ children }) {
         <WhatsappWidget/>
 
         </body>
+        <Toaster
+            position="bottom-right"
+            richColors
+            closeButton
+        />
         </html>
     )
 }

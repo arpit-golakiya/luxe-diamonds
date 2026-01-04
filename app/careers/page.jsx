@@ -5,6 +5,7 @@ import {PhoneInput} from "react-international-phone";
 import "react-international-phone/style.css"
 import ExperienceSelect from "@/components/ExperienceSelect";
 import PositionSelect from "@/components/PositionSelect";
+import {toast, Toaster} from "sonner";
 
 export default function Careers() {
     const [formData, setFormData] = useState({
@@ -64,7 +65,9 @@ export default function Careers() {
                 }
             )
 
-            alert("Application submitted successfully!")
+            toast.success("Application submitted successfully!", {
+                description: "We will connect with you soon.",
+            });
 
             setFormData({
                 fullName: "",
@@ -78,7 +81,9 @@ export default function Careers() {
 
         } catch (error) {
             console.error(error)
-            alert("Something went wrong. Please try again.")
+            toast.error("Submission failed", {
+                description: "Something went wrong. Please try again.",
+            });
         } finally {
             setIsSubmitting(false)
         }

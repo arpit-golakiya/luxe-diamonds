@@ -3,10 +3,10 @@
 import { useState } from "react"
 import { PhoneInput } from "react-international-phone"
 import "react-international-phone/style.css"
-import countries from "../../lib/data/countries.json"
 import WhatsAppIcon from "../../components/icons/WhatsAppIcon";
 import CountrySelect from "@/components/CountrySelect";
 import RequirementTypeSelect from "@/components/RequirementTypeSelect";
+import { toast } from "sonner";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -61,7 +61,9 @@ export default function Contact() {
             )
 
             // ✅ If fetch didn’t throw, GAS received it
-            alert("Thank you! We will connect with you soon.")
+            toast.success("Message sent successfully!", {
+                description: "We will connect with you soon.",
+            });
 
             setFormData({
                 name: "",
@@ -75,7 +77,9 @@ export default function Contact() {
 
         } catch (err) {
             console.error(err)
-            alert("Something went wrong. Please try again.")
+            toast.error("Submission failed", {
+                description: "Something went wrong. Please try again.",
+            });
         } finally {
             setIsSubmitting(false)
         }
