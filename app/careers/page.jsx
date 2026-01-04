@@ -3,6 +3,8 @@
 import { useState } from "react"
 import {PhoneInput} from "react-international-phone";
 import "react-international-phone/style.css"
+import ExperienceSelect from "@/components/ExperienceSelect";
+import PositionSelect from "@/components/PositionSelect";
 
 export default function Careers() {
     const [formData, setFormData] = useState({
@@ -256,37 +258,35 @@ export default function Careers() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm font-semibold mb-2">Years of Experience *</label>
-                                <select
-                                    name="experience"
+                                <label className="block text-sm font-semibold mb-2">
+                                    Years of Experience *
+                                </label>
+
+                                <ExperienceSelect
                                     value={formData.experience}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent bg-background"
-                                >
-                                    <option value="">Select experience level</option>
-                                    <option value="0-2">0-2 years</option>
-                                    <option value="2-5">2-5 years</option>
-                                    <option value="5-10">5-10 years</option>
-                                    <option value="10+">10+ years</option>
-                                </select>
+                                    onChange={(value) =>
+                                        setFormData((prev) => ({
+                                            ...prev,
+                                            experience: value,
+                                        }))
+                                    }
+                                />
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold mb-2">Position Interested In *</label>
-                                <select
-                                    name="position"
+                                <label className="block text-sm font-semibold mb-2">
+                                    Position Interested In *
+                                </label>
+
+                                <PositionSelect
                                     value={formData.position}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:border-accent bg-background"
-                                >
-                                    <option value="">Select a position</option>
-                                    {jobOpenings.map((job) => (
-                                        <option key={job.id} value={job.title}>
-                                            {job.title}
-                                        </option>
-                                    ))}
-                                </select>
+                                    jobOpenings={jobOpenings}
+                                    onChange={(value) =>
+                                        setFormData((prev) => ({
+                                            ...prev,
+                                            position: value,
+                                        }))
+                                    }
+                                />
                             </div>
                         </div>
                         <div>

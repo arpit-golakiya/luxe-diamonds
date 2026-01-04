@@ -139,3 +139,20 @@
 .custom-phone-input .react-international-phone-country-selector-button {
   @apply border-border;
 }
+
+.country-select__control {
+  min-height: 42px;
+  border-radius: 0.625rem;
+  border-width: 1px;
+  border-color: lab(90.952% -.0000596046 0);
+  box-shadow: none;
+}
+
+.country-select__control--is-focused {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 1px hsl(var(--primary));
+}
+
+.country-select__menu {
+  z-index: 50;
+}

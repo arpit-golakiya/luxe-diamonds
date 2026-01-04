@@ -5,6 +5,8 @@ import { PhoneInput } from "react-international-phone"
 import "react-international-phone/style.css"
 import countries from "../../lib/data/countries.json"
 import WhatsAppIcon from "../../components/icons/WhatsAppIcon";
+import CountrySelect from "@/components/CountrySelect";
+import RequirementTypeSelect from "@/components/RequirementTypeSelect";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -174,38 +176,36 @@ export default function Contact() {
                                 {/* Diamond Type + Country in one row */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-semibold mb-2">Requirement Type</label>
-                                        <select
-                                            name="diamondType"
+                                        <label className="block text-sm font-semibold mb-2">
+                                            Requirement Type
+                                        </label>
+
+                                        <RequirementTypeSelect
                                             value={formData.diamondType}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full px-4 py-2 border border-border rounded-lg"
-                                        >
-                                            <option value="">Select Type</option>
-                                            <option value="Lab Grown (CVD) Diamonds">Lab Grown (CVD) Diamonds</option>
-                                            <option value="Lab Grown (HPHT) Diamonds">Lab Grown (HPHT) Diamonds</option>
-                                            <option value="Natural Diamonds">Natural Diamonds</option>
-                                            <option value="Natural Diamonds Jewelry">Custom Jewelry</option>
-                                        </select>
+                                            onChange={(value) =>
+                                                setFormData((prev) => ({
+                                                    ...prev,
+                                                    diamondType: value,
+                                                }))
+                                            }
+                                        />
                                     </div>
 
+
                                     <div>
-                                        <label className="block text-sm font-semibold mb-2">Country</label>
-                                        <select
-                                            name="country"
+                                        <label className="block text-sm font-semibold mb-2">
+                                            Country
+                                        </label>
+
+                                        <CountrySelect
                                             value={formData.country}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full px-4 py-2 border border-border rounded-lg"
-                                        >
-                                            <option value="">Select Country</option>
-                                            {countries.map((country) => (
-                                                <option key={country} value={country}>
-                                                    {country}
-                                                </option>
-                                            ))}
-                                        </select>
+                                            onChange={(country) =>
+                                                setFormData((prev) => ({
+                                                    ...prev,
+                                                    country,
+                                                }))
+                                            }
+                                        />
                                     </div>
                                 </div>
 
@@ -315,79 +315,3 @@ export default function Contact() {
         </div>
     )
 }
-
-
-// function doPost(e) {
-//     const data = JSON.parse(e.postData.contents);
-//
-//     if (data.type === "contact") {
-//         return handleContact(data);
-//     }
-//
-//     if (data.type === "career") {
-//         return handleCareer(data);
-//     }
-//
-//     return ContentService.createTextOutput("INVALID");
-// }
-//
-// /* ---------- CONTACT ---------- */
-// function handleContact(data) {
-//     const sheet = SpreadsheetApp
-//         .openById("16tzMNnviMNFD6p3T8bLdIRuj7wMv-b5F5n12o-GX1cg")
-//         .getSheetByName("Leads");
-//
-//     sheet.appendRow([
-//         new Date(),
-//         data.name,
-//         data.email,
-//         data.phone,
-//         data.diamondType,
-//         data.country,
-//         data.subject,
-//         data.message
-//     ]);
-//
-//     MailApp.sendEmail({
-//         to: "info@ishantajewels.com",
-//         subject: "New Contact Form Lead",
-//         htmlBody: `<p><b>Name:</b> ${data.name}</p><p>${data.message}</p>`
-//     });
-//
-//     return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
-//         .setMimeType(ContentService.MimeType.JSON);
-// }
-//
-// /* ---------- CAREERS ---------- */
-// function handleCareer(data) {
-//     const sheet = SpreadsheetApp
-//         .openById("1tiF4lg0B5d9ixrUXZOuzh3xkJgaWBTVTKw1ZAuxHiak")
-//         .getSheetByName("Careers");
-//
-//     sheet.appendRow([
-//         new Date(),
-//         data.fullName,
-//         data.email,
-//         data.phone,
-//         data.position,
-//         data.experience,
-//         data.message
-//     ]);
-//
-//     MailApp.sendEmail({
-//         to: "info@ishantajewels.com",
-//         subject: `New Career Application – ${data.position}`,
-//         htmlBody: `
-//       <h3>New Career Application</h3>
-//       <p><b>Name:</b> ${data.fullName}</p>
-//       <p><b>Email:</b> ${data.email}</p>
-//       <p><b>Phone:</b> ${data.phone}</p>
-//       <p><b>Position:</b> ${data.position}</p>
-//       <p><b>Experience:</b> ${data.experience}</p>
-//       <p><b>Message:</b><br/>${data.message}</p>
-//     `
-//     });
-//
-//     return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
-//         .setMimeType(ContentService.MimeType.JSON);
-// }
